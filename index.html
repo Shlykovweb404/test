@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дом мебели</title>
+    <link rel="icon" href="img\favicon-96x96.png" type="image/png" sizes="120x120">
+    <link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+    <header>
+        <div class="menu-container">
+            <div class="logo">
+                <a href="index.html"><img src="img/Logo.png" alt="Логотип сайта"></a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="furniture_catalog.html">Каталог мебели</a></li>
+                    <li><a href="our_work.html">Наши работы</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Основной контент -->
+    <div class="fullscreen-image" >
+        <h1>Мебель на заказ</h1>
+        <p>Изготовим мебель по индивидуальным размерам с учётом ваших пожеланий.</p>
+        <button>Заказать мебель</button>
+        <!-- Стрелка -->
+        <a href="#about-section" class="arrow-down"><img src="img\якорная ссылка.png" alt="якорная ссылка"></a>
+    </div>
+    <section class="about-section">
+        <div class="about-content">
+            <h1 class="main-heading">О нас</h1>
+            <h2 class="sub-heading">Добро пожаловать на наш сайт!</h2>
+            <div class="divider"></div>
+            <p class="about-text">
+                Мы – команда профессионалов, которая
+                превращает ваши мечты о комфорте и 
+                уюте в реальность. "Дом Мебели"
+                специализируется на создании уникальной
+                мебели на заказ, которая идеально 
+                вписывается в ваш стиль жизни и 
+                интерьер.
+            </p>
+            <a href="about.html" class="about-button">Узнать больше...</a>
+        </div>
+        <div class="about-image">
+            <img src="img\image_about_1.png" alt="Наша команда">
+        </div>
+    </section>
+    <section class="why-us-section">
+        <div class="why-us-content">
+            <div class="section-title">
+                <span class="title-part-1">Почему именно</span>
+                <span class="title-part-2">Дом мебели</span>
+            </div>
+            
+            <ul class="benefits-list">
+                <li class="benefit-item">
+                    <div class="benefit-title">Качественные материалы</div>
+                    <div class="benefit-description">Используем только проверенные материалы от ведущих поставщиков</div>
+                </li>
+                <li class="benefit-item">
+                    <div class="benefit-title">Индивидуальный подход</div>
+                    <div class="benefit-description">Создаем мебель по вашим размерам и пожеланиям</div>
+                </li>
+                <li class="benefit-item">
+                    <div class="benefit-title">Опытные мастера</div>
+                    <div class="benefit-description">Над вашей мебелью работают профессионалы с 10+ летним опытом</div>
+                </li>
+                <li class="benefit-item">
+                    <div class="benefit-title">Гарантия 5 лет</div>
+                    <div class="benefit-description">Даем расширенную гарантию на всю нашу продукцию</div>
+                </li>
+                <li class="benefit-item">
+                    <div class="benefit-title">Экологичность</div>
+                    <div class="benefit-description">Используем безопасные материалы и лаки для здоровья вашей семьи</div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="why-us-image">
+            <img src="img\Почему именно дом мебели.png" alt="Наша мебель">
+        </div>
+    </section>
+
+
+
+    
+
+<script>
+     // Скрипт для бургер-меню
+     document.addEventListener('DOMContentLoaded', function() {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const navList = document.querySelector('nav ul');
+            
+            burgerMenu.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navList.classList.toggle('active');
+                
+                // Блокировка скролла при открытом меню
+                if (navList.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Закрытие меню при клике на пункт (для мобильных)
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        burgerMenu.classList.remove('active');
+                        navList.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+        });
+</script>
+</body>
+</html>

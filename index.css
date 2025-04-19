@@ -1,0 +1,709 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #FDF4E3;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+    padding-top: 100px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Фиксированный header всегда */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 1000;
+    background-color: #FDF4E3;
+    box-shadow: 0 2px 10px rgba(139, 69, 19, 0.1);
+}
+
+.menu-container {
+    width: 90%;
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+}
+
+.logo img {
+    height: 70%;
+    width: 75%;
+    transition: transform 0.3s;
+    object-fit: contain;
+}
+
+
+
+/* Десктопное меню */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8B4513;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #D2691E;
+    background-color: rgba(210, 105, 30, 0.1);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #D2691E;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Бургер-меню (скрыто по умолчанию) */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #8B4513;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
+    .logo img {
+        height: 80%;
+        width: 70%;
+        transition: transform 0.3s;
+        object-fit: contain;
+    }
+    /* Показываем бургер-меню и скрываем обычное */
+    .burger-menu {
+        display: block;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 90px; /* Отступ от верхнего края равен высоте header */
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: calc(100vh - 90px); /* Высота минус высота header */
+        background-color: #FDF4E3;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        transition: right 0.5s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding-top: 30px;
+        overflow-y: auto;
+    }
+    
+    nav ul.active {
+        right: 0;
+    }
+    
+    /* Анимация бургер-меню в крестик */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+    .about-button {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #4a91e200;
+        color: #D2691E;
+        text-decoration: none;
+        border-radius: 8px;
+        border: 1px solid #D2691E;
+        font-weight: 600;
+        transition: background-color 0.3s;
+        min-height: 45px; /* Фиксированная минимальная высота */
+    }
+    .about-image img {
+        width: 100%;
+        margin-top: 18%;
+    }
+    .about-text {
+        font-size: 24px;
+        line-height: 1.6;
+        color: #8B4513;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 992px) {
+    nav ul {
+        gap: 30px;
+    }
+    
+    nav ul li a {
+        font-size: 16px;
+    }
+    .about-text { font-size: 22px; }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 80%;
+        width: 70%;
+        transition: transform 0.3s;
+        object-fit: contain;
+    }
+    /* Показываем бургер-меню и скрываем обычное */
+    .burger-menu {
+        display: block;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 90px; /* Отступ от верхнего края равен высоте header */
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: calc(100vh - 80px); /* Высота минус высота header */
+        background-color: #FDF4E3;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        transition: right 0.5s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding-top: 30px;
+        overflow-y: auto;
+    }
+    
+    nav ul.active {
+        right: 0;
+    }
+    
+    /* Анимация бургер-меню в крестик */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+    .about-image img {
+        width: 720px;
+
+    }
+   
+}
+   
+
+
+@media (max-width: 576px) {
+    header {
+        
+        width: 100%;
+        padding: 15px 0;
+        z-index: 1000;
+    }
+    .logo img {
+        height: 80%;
+        width: 50%;
+        transition: transform 0.3s;
+        object-fit: contain;
+    }
+    /* Показываем бургер-меню и скрываем обычное */
+    .burger-menu {
+        display: block;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 90px; /* Отступ от верхнего края равен высоте header */
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: calc(100vh - 90px); /* Высота минус высота header */
+        background-color: #FDF4E3;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        transition: right 0.5s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding-top: 30px;
+        overflow-y: auto;
+    }
+    
+    nav ul.active {
+        right: 0;
+    }
+    
+    /* Анимация бургер-меню в крестик */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+    .about-image img {
+        width: 720px;
+
+    }
+    .title-part-1 {
+        font-size: 28px;
+    }
+    .title-part-2 {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+    .benefit-title {
+        font-size: 16px;
+    }
+    .why-us-image {
+        width: 100%;
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        width: 100%;
+        padding: 15px 0;
+        z-index: 1000;
+    }
+    .logo img {
+        height: 80%;
+        width: 50%;
+        transition: transform 0.3s;
+        object-fit: contain;
+    }
+    /* Показываем бургер-меню и скрываем обычное */
+    .burger-menu {
+        display: block;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 90px; /* Отступ от верхнего края равен высоте header */
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: calc(100vh - 90px); /* Высота минус высота header */
+        background-color: #FDF4E3;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        transition: right 0.5s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding-top: 30px;
+        overflow-y: auto;
+    }
+    
+    nav ul.active {
+        right: 0;
+    }
+    
+    /* Анимация бургер-меню в крестик */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+    .about-image img {
+        width: 720px;
+
+    }
+    .title-part-1 {
+        font-size: 28px;
+    }
+    .title-part-2 {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+    .benefit-title {
+        font-size: 16px;
+    }
+    .why-us-image {
+        width: 100%;
+        max-width: 400px;
+    }
+    .main-heading {
+        font-size: 10px; /* Чуть меньше для маленьких экранов */
+        margin-bottom: 10px;
+    }
+
+    .sub-heading {
+        font-size: 16px; /* Уменьшаем размер подзаголовка */
+        margin-bottom: 15px;
+    }
+
+    .divider {
+        width: 100%; /* Делаем разделитель на всю ширину */
+        max-width: 380px; /* Но не шире 300px */
+    }
+
+    .about-text {
+        font-size: 16px; /* Уменьшаем размер текста для удобочитаемости */
+        line-height: 1.5; /* Чуть меньше межстрочный интервал */
+        margin-bottom: 20px;
+    }
+   
+}
+
+
+    
+
+
+
+.fullscreen-image {
+    position: relative;
+    width: 100%;
+    min-height: 91vh;
+    background-image: url('../img/fon.png'); /* Замените на вашу картинку */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FDF4E3; /* Цвет текста */
+    text-align: center;
+    margin-top: -1% /* Отступ для фиксированного меню */
+}
+
+.fullscreen-image h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: "Montserrat",  sans-serif;
+}
+
+.fullscreen-image p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-family: 'Lato', sans-serif;
+}
+
+.fullscreen-image button {
+    padding: 20px 40px;
+    font-size: 20px;
+    color: #FDF4E3;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid;
+    border-color: #FDF4E3;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+}
+
+.fullscreen-image button:hover {
+    background-color: #FDF4E3;
+    color: #8B4513;
+}
+
+.fullscreen-image img {
+    width: 27px;
+}
+
+/* Стили для стрелки */
+.arrow-down {
+    position: absolute;
+    bottom: 10px;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    animation: bounce 2s infinite;
+}
+
+/* Анимация стрелки */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.about-section {
+    display: flex;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 50px;
+    scroll-margin-top: 90px; /* Отступ для якорной ссылки */
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.main-heading {
+    font-size: 48px;
+    font-weight: 700;
+    color: #8B4513;
+    margin-bottom: 15px;
+}
+
+.sub-heading {
+    font-size: 20px;
+    font-weight: 600;
+    color: #D2691E;
+    margin-bottom: 20px;
+}
+
+.divider {
+    width: 500px;
+    height: 3px;
+    background-color: #D2691E;
+    margin-bottom: 25px;
+}
+
+.about-text {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #8B4513;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.about-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #4a91e200;
+    color: #D2691E;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #D2691E;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    height: 40px;
+}
+
+.about-button:hover {
+    background-color: #D2691E;
+    color: #FDF4E3;
+}
+.why-us-section {
+    max-width: 1800px;
+    width: 90%;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.why-us-content {
+    flex: 1;
+}
+
+.why-us-image {
+    flex: 1;
+}
+
+.why-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.title-part-1 {
+    font-size: 52px;
+    font-weight: 700;
+    color: #8B4513;
+    line-height: 1.1;
+}
+
+.title-part-2 {
+    font-size: 52px;
+    font-weight: 700;
+    color: #C7A32E;
+    display: block;
+    margin-top: -10px;
+    margin-left: 220px;
+    position: relative;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefit-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #C7A32E;
+    position: relative;
+}
+
+.benefit-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #8B4513;
+    margin-bottom: 8px;
+}
+
+.benefit-description {
+    font-size: 16px;
+    color: #D2691E;
+    line-height: 1.5;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1600px) {
+    .title-part-1 {
+        font-size: 46px;
+    }
+    .title-part-2 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .why-us-section {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .why-us-image {
+        order: -1;
+        width: 80%;
+    }
+    .section-title {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-part-1 {
+        font-size: 36px;
+    }
+    .title-part-2 {
+        font-size: 32px;
+        margin-left: 20px;
+    }
+    .benefit-title {
+        font-size: 18px;
+    }
+    .why-us-image {
+        width: 720px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-part-1 {
+        font-size: 28px;
+    }
+    .title-part-2 {
+        font-size: 24px;
+        margin-left: 15px;
+    }
+    .benefit-item {
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    
+    .about-content {
+        order: 2;
+    }
+    
+    .about-image {
+        order: 1;
+        margin-bottom: 30px;
+    }
+}
