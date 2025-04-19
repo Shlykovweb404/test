@@ -426,7 +426,7 @@ nav ul li a:hover::after {
     position: relative;
     width: 100%;
     min-height: 91vh;
-    background-image: url('../img/fon.png'); /* Замените на вашу картинку */
+    background-image: url('img/fon.png'); /* Замените на вашу картинку */
     background-size: cover;
     background-position: center;
     display: flex;
