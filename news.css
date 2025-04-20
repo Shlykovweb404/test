@@ -139,7 +139,7 @@ nav ul li a:hover::after {
     width: 100%;
     height: 351px;
     overflow: hidden;
-    background: #000 url('../img/Новости.png') no-repeat center center;
+    background: #000 url('img/Новости.png') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
