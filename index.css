@@ -125,7 +125,7 @@ nav ul li a:hover::after {
     position: relative;
     width: 100%;
     min-height: 91vh;
-    background-image: url('../img/fon.png');
+    background-image: url('img/fon.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -516,7 +516,7 @@ nav ul li a:hover::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/Обратная связь.png');
+    background-image: url('img/Обратная связь.png');
     background-size: cover;
     background-position: center;
     z-index: 1;
