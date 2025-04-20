@@ -1,3 +1,6 @@
+/* ====================== */
+/* Глобальные стили */
+/* ====================== */
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +24,9 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-/* Фиксированный header всегда */
+/* ====================== */
+/* Шапка сайта (Header) */
+/* ====================== */
 header {
     position: fixed;
     top: 0;
@@ -56,9 +61,7 @@ header {
     object-fit: contain;
 }
 
-
-
-/* Десктопное меню */
+/* Навигационное меню */
 nav ul {
     display: flex;
     list-style: none;
@@ -115,32 +118,29 @@ nav ul li a:hover::after {
     transition: all 0.3s ease;
 }
 
-
-
-    
-
-
-
+/* ====================== */
+/* Полноэкранное изображение */
+/* ====================== */
 .fullscreen-image {
     position: relative;
     width: 100%;
     min-height: 91vh;
-    background-image: url('img/fon.png'); /* Замените на вашу картинку */
+    background-image: url('../img/fon.png');
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #FDF4E3; /* Цвет текста */
+    color: #FDF4E3;
     text-align: center;
-    margin-top: -1% /* Отступ для фиксированного меню */
+    margin-top: -1%;
 }
 
 .fullscreen-image h1 {
     font-size: 48px;
     margin-bottom: 20px;
-    font-family: "Montserrat",  sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .fullscreen-image p {
@@ -170,7 +170,7 @@ nav ul li a:hover::after {
     width: 27px;
 }
 
-/* Стили для стрелки */
+/* Анимация стрелки вниз */
 .arrow-down {
     position: absolute;
     bottom: 10px;
@@ -180,7 +180,6 @@ nav ul li a:hover::after {
     animation: bounce 2s infinite;
 }
 
-/* Анимация стрелки */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -193,6 +192,9 @@ nav ul li a:hover::after {
     }
 }
 
+/* ====================== */
+/* Секция "О нас" */
+/* ====================== */
 .about-section {
     display: flex;
     width: 100%;
@@ -202,7 +204,7 @@ nav ul li a:hover::after {
     box-sizing: border-box;
     align-items: center;
     gap: 50px;
-    scroll-margin-top: 90px; /* Отступ для якорной ссылки */
+    scroll-margin-top: 90px;
 }
 
 .about-content {
@@ -267,6 +269,10 @@ nav ul li a:hover::after {
     background-color: #D2691E;
     color: #FDF4E3;
 }
+
+/* ====================== */
+/* Секция "Почему мы" */
+/* ====================== */
 .why-us-section {
     max-width: 1800px;
     width: 90%;
@@ -338,10 +344,9 @@ nav ul li a:hover::after {
     line-height: 1.5;
 }
 
-
-
-
-/* Стили для слайдера */
+/* ====================== */
+/* Слайдер товаров */
+/* ====================== */
 .products-slider {
     width: 100%;
     max-width: 1920px;
@@ -349,52 +354,52 @@ nav ul li a:hover::after {
     padding: 40px 0;
     position: relative;
     overflow: hidden;
-  }
-  
-  .slider-title {
+}
+
+.slider-title {
     font-size: 32px;
     color: #8B4513;
     margin-bottom: 30px;
     font-family: 'Arial', sans-serif;
-    padding-left: 5%; /* Отступ от левого края */
-    text-align: left; /* Выравнивание по левому краю */
-  }
-  
-  .slider-container {
+    padding-left: 5%;
+    text-align: left;
+}
+
+.slider-container {
     width: 100%;
     position: relative;
-  }
-  
-  .slider-track {
+}
+
+.slider-track {
     display: flex;
     transition: transform 0.8s ease-in-out;
-    width: calc(454px * 16); /* Дублируем слайды для бесшовной анимации */
-  }
-  
-  .slide {
+    width: calc(454px * 16);
+}
+
+.slide {
     width: 454px;
     height: 380px;
     flex-shrink: 0;
     position: relative;
     margin: 0 10px;
-  }
-  
-  .slide-link {
+}
+
+.slide-link {
     display: block;
     height: 100%;
     text-decoration: none;
     color: #8B4513;
-  }
-  
-  .slide-image {
+}
+
+.slide-image {
     width: 100%;
     height: 340px;
     object-fit: cover;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .slide-caption {
+}
+
+.slide-caption {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -405,68 +410,33 @@ nav ul li a:hover::after {
     box-sizing: border-box;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-  }
-  /* Анимация автоматической прокрутки */
-  @keyframes slideAnimation {
+}
+
+@keyframes slideAnimation {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+        transform: translateX(-50%);
     }
-  }
-  
-  .slider-track {
-    animation: slideAnimation 30s linear infinite;
-  }
-  
-  .slider-track:hover {
-    animation-play-state: paused;
-  }
-  
-  /* Адаптивность */
-  @media (max-width: 768px) {
-    .slider-title {
-      font-size: 24px;
-      padding-left: 20px;
-    }
-    
-    .slide {
-      width: 300px;
-      height: 280px;
-    }
-    
-    .slide-image {
-      height: 240px;
-    }
-    
-    .slide-caption {
-      font-size: 16px;
-    }
-    
-    .slider-track {
-      width: calc(300px * 16);
-    }
-  }
+}
 
-/* Основные стили */
+.slider-track {
+    animation: slideAnimation 30s linear infinite;
+}
+
+.slider-track:hover {
+    animation-play-state: paused;
+}
+
+/* ====================== */
+/* Каталог товаров */
+/* ====================== */
 .catalog-section {
     max-width: 1800px;
     width: 90%;
     margin: 80px auto;
     padding: 40px 0;
-}
-
-.section-title {
-    font-size: 48px;
-    color: #8B4513;
-    text-align: left; /* Изменено с center на left */
-    margin: 0 0 40px 0; /* Уменьшил нижний отступ */
-    font-weight: 600;
-    letter-spacing: 1px;
-    width: 100%; /* Занимает всю ширину */
-    
-    position: relative; /* Для возможных декоративных элементов */
 }
 
 .catalog-grid {
@@ -527,265 +497,130 @@ nav ul li a:hover::after {
     text-align: center;
 }
 
-/* Адаптивные стили */
-@media (max-width: 1600px) {
-    .catalog-grid {
-        gap: 25px;
-    }
-    .catalog-card {
-        height: 280px;
-    }
+/* ====================== */
+/* Секция контактов */
+/* ====================== */
+.contact-section {
+    max-width: 1800px;
+    width: 90%;
+    margin: 80px auto;
+    padding: 60px 0;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
-@media (max-width: 1400px) {
-    .section-title {
-        font-size: 42px;
-    }
-    .card-title {
-        font-size: 24px;
-    }
+.contact-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/Обратная связь.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
 }
 
-@media (max-width: 1200px) {
-    .catalog-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .catalog-card {
-        height: 260px;
-    }
+.contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(40,40,40,0.9) 0%, rgba(70,70,70,0.7) 100%);
+    backdrop-filter: blur(2px);
+    z-index: 2;
 }
 
-@media (max-width: 992px) {
-    .catalog-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    .catalog-card {
-        height: 240px;
-    }
-    .section-title {
-        font-size: 36px;
-        margin-bottom: 50px;
-    }
-    .card-title {
-        font-size: 22px;
-        padding: 20px;
-    }
+.contact-container {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-@media (max-width: 768px) {
-    .catalog-section {
-        margin: 60px auto;
-        padding: 30px 0;
-    }
-    .section-title {
-        font-size: 32px;
-        margin-bottom: 40px;
-    }
-    .catalog-card {
-        height: 220px;
-    }
+.contact-title {
+    font-size: 42px;
+    color: #FDF4E3;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
 }
 
-@media (max-width: 576px) {
-    .catalog-grid {
-        grid-template-columns: 1fr;
-        max-width: 450px;
-        margin: 0 auto;
-        gap: 15px;
-    }
-    .catalog-card {
-        height: 200px;
-    }
-    .section-title {
-        font-size: 28px;
-    }
-    .card-title {
-        font-size: 20px;
-        padding: 15px;
-    }
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
 }
 
-        /* Основные стили */
-        .contact-section {
-            max-width: 1800px;
-            width: 90%;
-            margin: 80px auto;
-            padding: 60px 0;
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-        }
+.form-group {
+    margin-bottom: 20px;
+}
 
-        .contact-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('img/Обратная связь.png');
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-        }
+.form-group.full-width {
+    grid-column: span 2;
+}
 
-        .contact-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(40,40,40,0.9) 0%, rgba(70,70,70,0.7) 100%);
-            backdrop-filter: blur(2px);
-            z-index: 2;
-          
-        }
+.form-label {
+    display: block;
+    color: #FDF4E3;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
 
-        .contact-container {
-            position: relative;
-            z-index: 3;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.form-input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #FDF4E3;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    transition: all 0.3s;
+}
 
-        .contact-title {
-            font-size: 42px;
-            color: #FDF4E3;
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: 600;
-        }
+.form-input:focus {
+    outline: none;
+    border-color: #FDF4E3;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+}
 
-        .contact-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+.submit-btn {
+    grid-column: span 2;
+    padding: 16px;
+    background-color: #D2691E;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
 
-        .form-group.full-width {
-            grid-column: span 2;
-        }
+.submit-btn:hover {
+    background-color: #B05A1A;
+    transform: translateY(-2px);
+}
 
-        .form-label {
-            display: block;
-            color: #FDF4E3;
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #FDF4E3;
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.9);
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: #FDF4E3;
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
-        }
-
-        .form-textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            grid-column: span 2;
-            padding: 16px;
-            background-color: #D2691E;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #B05A1A;
-            transform: translateY(-2px);
-        }
-
-        /* Адаптивные стили */
-        @media (max-width: 1200px) {
-            .contact-title {
-                font-size: 36px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .contact-form {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .form-group.full-width {
-                grid-column: span 1;
-            }
-            
-            .submit-btn {
-                grid-column: span 1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .contact-section {
-                padding: 40px 0;
-                margin: 60px auto;
-            }
-            
-            .contact-title {
-                font-size: 32px;
-                margin-bottom: 30px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .contact-title {
-                font-size: 28px;
-            }
-            
-            .form-input {
-                padding: 12px;
-            }
-            
-            .submit-btn {
-                padding: 14px;
-                font-size: 16px;
-            }
-        }
-
- /* Основные стили */
- .reviews-section {
+/* ====================== */
+/* Секция отзывов */
+/* ====================== */
+.reviews-section {
     max-width: 1800px;
     width: 90%;
     margin: 80px auto;
     padding: 60px 0;
     background-color: #FDF4E3;
     border-radius: 20px;
-  
 }
 
-.section-title {
-    font-size: 42px;
-    color: #8B4513;
-    text-align: center;
-    margin-bottom: 50px;
-    font-weight: 600;
-}
-
-/* Слайдер отзывов */
 .reviews-slider {
     position: relative;
     max-width: 1200px;
@@ -859,7 +694,6 @@ nav ul li a:hover::after {
     color: #A08B7D;
 }
 
-/* Навигация слайдера */
 .slider-nav {
     display: flex;
     justify-content: center;
@@ -874,7 +708,6 @@ nav ul li a:hover::after {
     margin: 0 8px;
     cursor: pointer;
     transition: all 0.3s;
-   
 }
 
 .slider-dot.active {
@@ -882,7 +715,6 @@ nav ul li a:hover::after {
     transform: scale(1.2);
 }
 
-/* Форма добавления отзыва */
 .add-review {
     max-width: 800px;
     margin: 0 auto;
@@ -895,14 +727,6 @@ nav ul li a:hover::after {
     gap: 25px;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group.full-width {
-    grid-column: span 2;
-}
-
 .form-label-1 {
     display: block;
     color: #8B4513;
@@ -910,175 +734,270 @@ nav ul li a:hover::after {
     font-size: 16px;
 }
 
-.form-input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #D2691E;
-    border-radius: 8px;
-    background-color: white;
-    font-size: 16px;
-    transition: all 0.3s;
+/* ====================== */
+/* Секция FAQ */
+/* ====================== */
+.faq-section {
+    max-width: 1800px;
+    width: 90%;
+    margin: 100px auto;
+    padding: 80px 0;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
 }
 
-.form-input:focus {
-    outline: none;
-    border-color: #8B4513;
-    box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.3);
+.faq-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(210,105,30,0.1) 0%, rgba(210,105,30,0) 70%);
+    border-radius: 50%;
 }
 
-.form-textarea {
-    min-height: 150px;
-    resize: vertical;
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
 }
 
-.submit-btn {
-    grid-column: span 2;
-    padding: 16px;
-    background-color: #D2691E;
+.faq-item {
+    margin-bottom: 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(139, 69, 19, 0.08);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    background: white;
+    position: relative;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(139, 69, 19, 0.12);
+}
+
+.faq-question {
+    background: linear-gradient(135deg, #8B4513 0%, #A05A2A 100%);
     color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 600;
+    padding: 25px 80px 25px 40px;
+    font-size: 22px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
-.submit-btn:hover {
-    background-color: #B05A1A;
-    transform: translateY(-2px);
+.faq-question:hover {
+    background: linear-gradient(135deg, #A05A2A 0%, #8B4513 100%);
 }
 
+.faq-question::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: #D2691E;
+    transition: all 0.3s ease;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    font-size: 28px;
+    font-weight: 300;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-item.active .faq-question::after {
+    content: '-';
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-item.active .faq-question::before {
+    height: 100%;
+    background: #F1C40F;
+}
+
+.faq-answer {
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.answer-content {
+    padding: 0 40px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
+.faq-item.active .answer-content {
+    padding: 30px 40px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-answer p {
+    color: #5A4A42;
+    font-size: 17px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ====================== */
+/* Подвал сайта (Footer) */
+/* ====================== */
+.site-footer {
+    background-color: #F5DEB3;
+    padding: 50px 0 30px;
+    font-family: 'Arial', sans-serif;
+    color: #8B4513;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 80px;
+    border-top: 1px solid rgba(139, 69, 19, 0.1);
+}
+
+.footer-container {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-left {
+    flex: 2;
+    min-width: 300px;
+}
+
+.footer-logo img {
+    height: 60px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
+.footer-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #8B4513;
+    font-weight: 600;
+    position: relative;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #D2691E;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contact-block {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.contact-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #8B4513;
+    font-weight: 600;
+}
+
+.contact-info {
+    margin: 8px 0;
+    color: #5A4A42;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 280px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
+}
+
+/* ====================== */
 /* Адаптивные стили */
-@media (max-width: 1200px) {
-    .section-title {
-        font-size: 36px;
-    }
-    .review-card {
-        padding: 0 30px;
-    }
-    .submit-btn:hover {
-        background-color: #B05A1A;
-        transform: translateY(-10px);
-    }
-}
+/* ====================== */
 
-@media (max-width: 992px) {
-    .review-form {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    .form-group.full-width {
-        grid-column: span 1;
-    }
-    .submit-btn {
-        grid-column: span 1;
-    }
-    .submit-btn:hover {
-        background-color: #B05A1A;
-        transform: translateY(-10px);
-    }
-}
-
-@media (max-width: 768px) {
-    .reviews-section {
-        padding: 40px 0;
-        margin: 60px auto;
-    }
-    .section-title {
-        font-size: 32px;
-        margin-bottom: 40px;
-    }
-    .review-content {
-        padding: 30px;
-    }
-    .review-text {
-        font-size: 16px;
-    }
-    .submit-btn:hover {
-        background-color: #B05A1A;
-        transform: translateY(-10px);
-    }
-}
-
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 28px;
-    }
-    .review-card {
-        padding: 0 20px;
-    }
-    .review-content {
-        padding: 25px 20px;
-    }
-    .author-avatar {
-        width: 50px;
-        height: 50px;
-        margin-right: 15px;
-    }
-    .form-input {
-        padding: 12px;
-    }
-    .submit-btn {
-        padding: 14px;
-        font-size: 16px;
-    }
-    .submit-btn:hover {
-        background-color: #B05A1A;
-        transform: translateY(-10px);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Адаптивные стили */
+/* Общие адаптивные стили для всех секций */
 @media (max-width: 1600px) {
-    .title-part-1 {
+    .title-part-1, .title-part-2 {
         font-size: 46px;
     }
-    .title-part-2 {
+    .catalog-grid {
+        gap: 25px;
+    }
+    .catalog-card {
+        height: 280px;
+    }
+    .card-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .section-title {
         font-size: 42px;
     }
 }
 
 @media (max-width: 1200px) {
+    .footer-container, .footer-contacts {
+        gap: 30px;
+    }
     .why-us-section {
         flex-direction: column;
         gap: 40px;
@@ -1090,354 +1009,246 @@ nav ul li a:hover::after {
     .section-title {
         margin-bottom: 30px;
     }
+    .catalog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .catalog-card {
+        height: 260px;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer-left, .footer-right {
+        flex: 100%;
+        text-align: center;
+    }
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+    }
+    .footer-right {
+        margin-top: 30px;
+    }
+    .footer-map iframe {
+        height: 350px;
+    }
+    .footer-contacts, .social-icons {
+        justify-content: center;
+    }
+    .faq-section {
+        padding: 70px 0;
+        margin: 80px auto;
+    }
+    .faq-container {
+        padding: 0 30px;
+    }
+    .contact-form, .review-form {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .form-group.full-width, .submit-btn {
+        grid-column: span 1;
+    }
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .catalog-card {
+        height: 240px;
+    }
+    .section-title {
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+    .card-title {
+        font-size: 22px;
+        padding: 20px;
+    }
 }
 
 @media (max-width: 768px) {
-    .title-part-1 {
+    /* Активация бургер-меню */
+    .burger-menu {
+        display: block;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 90px;
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: calc(100vh - 90px);
+        background-color: #FDF4E3;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        transition: right 0.5s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding-top: 30px;
+        overflow-y: auto;
+    }
+    
+    nav ul.active {
+        right: 0;
+    }
+    
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    .site-footer, .reviews-section, .contact-section {
+        padding: 40px 0 30px;
+        margin: 60px auto;
+    }
+    .footer-title, .section-title, .contact-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    .footer-contacts {
+        gap: 25px;
+    }
+    .contact-block {
+        min-width: 160px;
+    }
+    .catalog-card {
+        height: 220px;
+    }
+    .title-part-1, .title-part-2 {
         font-size: 36px;
     }
     .title-part-2 {
-        font-size: 32px;
         margin-left: 20px;
     }
     .benefit-title {
         font-size: 18px;
     }
     .why-us-image {
-        width: 720px;
+        width: 100%;
     }
-}
-
-@media (max-width: 480px) {
-    .title-part-1 {
-        font-size: 28px;
-    }
-    .title-part-2 {
-        font-size: 24px;
-        margin-left: 15px;
-    }
-    .benefit-item {
-        padding: 15px 0;
-    }
-}
-
-@media (max-width: 768px) {
     .about-section {
         flex-direction: column;
         padding: 40px 20px;
     }
-    
     .about-content {
         order: 2;
     }
-    
     .about-image {
         order: 1;
         margin-bottom: 30px;
-    }
-}
-
-
-
-
-/* Медиа-запросы для адаптивности */
-@media (max-width: 1200px) {
-    .logo img {
-        height: 80%;
-        width: 70%;
-        transition: transform 0.3s;
-        object-fit: contain;
-    }
-    /* Показываем бургер-меню и скрываем обычное */
-    .burger-menu {
-        display: block;
-    }
-    
-    nav ul {
-        position: fixed;
-        top: 90px; /* Отступ от верхнего края равен высоте header */
-        right: -100%;
-        width: 100%;
-        max-width: 300px;
-        height: calc(100vh - 90px); /* Высота минус высота header */
-        background-color: #FDF4E3;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 30px;
-        transition: right 0.5s ease;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        padding-top: 30px;
-        overflow-y: auto;
-    }
-    
-    nav ul.active {
-        right: 0;
-    }
-    
-    /* Анимация бургер-меню в крестик */
-    .burger-menu.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 6px);
-    }
-    
-    .burger-menu.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .burger-menu.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -6px);
-    }
-    .about-button {
-        display: inline-block;
-        padding: 12px 30px;
-        background-color: #4a91e200;
-        color: #D2691E;
-        text-decoration: none;
-        border-radius: 8px;
-        border: 1px solid #D2691E;
-        font-weight: 600;
-        transition: background-color 0.3s;
-        min-height: 45px; /* Фиксированная минимальная высота */
     }
     .about-image img {
         width: 100%;
         margin-top: 18%;
     }
     .about-text {
-        font-size: 24px;
-        line-height: 1.6;
-        color: #8B4513;
-        margin-bottom: 30px;
-        text-align: justify;
+        font-size: 22px;
     }
 }
-
-@media (max-width: 992px) {
-    nav ul {
-        gap: 30px;
-    }
-    
-    nav ul li a {
-        font-size: 16px;
-    }
-    .about-text { font-size: 22px; }
-}
-
-@media (max-width: 768px) {
-    .logo img {
-        height: 80%;
-        width: 70%;
-        transition: transform 0.3s;
-        object-fit: contain;
-    }
-    /* Показываем бургер-меню и скрываем обычное */
-    .burger-menu {
-        display: block;
-    }
-    
-    nav ul {
-        position: fixed;
-        top: 90px; /* Отступ от верхнего края равен высоте header */
-        right: -100%;
-        width: 100%;
-        max-width: 300px;
-        height: calc(100vh - 80px); /* Высота минус высота header */
-        background-color: #FDF4E3;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 30px;
-        transition: right 0.5s ease;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        padding-top: 30px;
-        overflow-y: auto;
-    }
-    
-    nav ul.active {
-        right: 0;
-    }
-    
-    /* Анимация бургер-меню в крестик */
-    .burger-menu.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 6px);
-    }
-    
-    .burger-menu.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .burger-menu.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -6px);
-    }
-    .about-image img {
-        width: 720px;
-
-    }
-   
-}
-   
-
 
 @media (max-width: 576px) {
-    header {
-        
-        width: 100%;
-        padding: 15px 0;
-        z-index: 1000;
+    .footer-container {
+        width: 95%;
+        gap: 20px;
+        text-align: center;
     }
-    .logo img {
-        height: 80%;
-        width: 50%;
-        transition: transform 0.3s;
-        object-fit: contain;
+    .footer-logo {
+        display: flex;
+        justify-content: center;
     }
-    /* Показываем бургер-меню и скрываем обычное */
-    .burger-menu {
-        display: block;
+    .footer-logo img {
+        height: 50px;
+        margin-bottom: 20px;
     }
-    
-    nav ul {
-        position: fixed;
-        top: 90px; /* Отступ от верхнего края равен высоте header */
-        right: -100%;
-        width: 100%;
-        max-width: 300px;
-        height: calc(100vh - 90px); /* Высота минус высота header */
-        background-color: #FDF4E3;
+    .footer-title, .section-title, .contact-title {
+        font-size: 28px;
+    }
+    .footer-contacts {
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        gap: 30px;
-        transition: right 0.5s ease;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        padding-top: 30px;
-        overflow-y: auto;
+        gap: 20px;
     }
-    
-    nav ul.active {
-        right: 0;
+    .contact-block {
+        min-width: 100%;
     }
-    
-    /* Анимация бургер-меню в крестик */
-    .burger-menu.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 6px);
+    .footer-map iframe {
+        height: 250px;
     }
-    
-    .burger-menu.active span:nth-child(2) {
-        opacity: 0;
+    .social-icons img {
+        width: 28px;
+        height: 28px;
     }
-    
-    .burger-menu.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -6px);
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+        gap: 15px;
     }
-    .about-image img {
-        width: 720px;
-
+    .catalog-card {
+        height: 200px;
     }
-    .title-part-1 {
+    .card-title {
+        font-size: 20px;
+        padding: 15px;
+    }
+    .title-part-1, .title-part-2 {
         font-size: 28px;
     }
     .title-part-2 {
-        font-size: 24px;
         margin-left: 10px;
     }
     .benefit-title {
         font-size: 16px;
     }
     .why-us-image {
-        width: 100%;
-        max-width: 540px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        width: 100%;
-        padding: 15px 0;
-        z-index: 1000;
-    }
-    .logo img {
-        height: 80%;
-        width: 50%;
-        transition: transform 0.3s;
-        object-fit: contain;
-    }
-    /* Показываем бургер-меню и скрываем обычное */
-    .burger-menu {
-        display: block;
-    }
-    
-    nav ul {
-        position: fixed;
-        top: 90px; /* Отступ от верхнего края равен высоте header */
-        right: -100%;
-        width: 100%;
-        max-width: 300px;
-        height: calc(100vh - 90px); /* Высота минус высота header */
-        background-color: #FDF4E3;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 30px;
-        transition: right 0.5s ease;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        padding-top: 30px;
-        overflow-y: auto;
-    }
-    
-    nav ul.active {
-        right: 0;
-    }
-    
-    /* Анимация бургер-меню в крестик */
-    .burger-menu.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 6px);
-    }
-    
-    .burger-menu.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .burger-menu.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -6px);
-    }
-    .about-image img {
-        width: 720px;
-
-    }
-    .title-part-1 {
-        font-size: 28px;
-    }
-    .title-part-2 {
-        font-size: 24px;
-        margin-left: 10px;
-    }
-    .benefit-title {
-        font-size: 16px;
-    }
-    .why-us-image {
-        width: 100%;
         max-width: 400px;
     }
     .main-heading {
-        font-size: 10px; /* Чуть меньше для маленьких экранов */
-        margin-bottom: 10px;
+        font-size: 36px;
     }
-
     .sub-heading {
-        font-size: 16px; /* Уменьшаем размер подзаголовка */
-        margin-bottom: 15px;
+        font-size: 16px;
     }
-
     .divider {
-        width: 100%; /* Делаем разделитель на всю ширину */
-        max-width: 380px; /* Но не шире 300px */
+        width: 100%;
+        max-width: 380px;
     }
-
     .about-text {
-        font-size: 16px; /* Уменьшаем размер текста для удобочитаемости */
-        line-height: 1.5; /* Чуть меньше межстрочный интервал */
-        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.5;
     }
-   
+    .about-button {
+        min-height: 45px;
+    }
+    .logo img {
+        width: 50%;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer-map iframe {
+        height: 200px;
+    }
+    .title-part-1, .title-part-2 {
+        font-size: 24px;
+    }
+    .why-us-image {
+        max-width: 350px;
+    }
+    .main-heading {
+        font-size: 32px;
+    }
+    .about-text {
+        font-size: 15px;
+    }
 }
