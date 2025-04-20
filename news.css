@@ -1,0 +1,695 @@
+/* ====================== */
+/* Глобальные стили */
+/* ====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Отступ при скролле к якорям */
+}
+
+body {
+    min-height: 100vh;
+    background-color: #FDF4E3; /* Основной цвет фона */
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+    padding-top: 100px; /* Компенсация фиксированного хедера */
+}
+
+/* Скрытие стандартного скроллбара */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Цветовые переменные */
+:root {
+    --primary: #8B6B4A;       /* Основной коричневый */
+    --primary-light: #B99B7B; /* Светлый коричневый */
+    --dark: #3A3226;         /* Темный цвет текста */
+    --light: #F8F4EF;       /* Светлый фон */
+    --accent: #D4A373;      /* Акцентный цвет */
+}
+
+/* ====================== */
+/* Шапка сайта (Header) */
+/* ====================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 1000;
+    background-color: #FDF4E3;
+    box-shadow: 0 2px 10px rgba(139, 69, 19, 0.1);
+}
+
+/* Контейнер меню */
+.menu-container {
+    width: 90%;
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип */
+.logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+}
+
+.logo img {
+    height: 70%;
+    width: 75%;
+    transition: transform 0.3s;
+    object-fit: contain;
+}
+
+/* Основная навигация */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8B4513;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s;
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: relative;
+}
+
+/* Эффекты при наведении на пункты меню */
+nav ul li a:hover {
+    color: #D2691E;
+    background-color: rgba(210, 105, 30, 0.1);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #D2691E;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Бургер-меню (скрыто на десктопе) */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #8B4513;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* ====================== */
+/* Баннер новостей */
+/* ====================== */
+.header-banner {
+    position: relative;
+    width: 100%;
+    height: 351px;
+    overflow: hidden;
+    background: #000 url('../img/Новости.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Затемнение фона баннера */
+.header-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Контент баннера */
+.banner-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 0 20px;
+    max-width: 1200px;
+}
+
+.banner-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+/* ====================== */
+/* Секция новостных карточек */
+/* ====================== */
+.news-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 40px;
+    margin-top: 5%;
+}
+
+/* Карточка новости */
+.news-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(58, 50, 38, 0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Эффекты при наведении на карточку */
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(58, 50, 38, 0.15);
+}
+
+/* Контейнер изображения новости */
+.news-image-container {
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.news-card:hover .news-image {
+    transform: scale(1.08);
+}
+
+/* Бейдж новости */
+.news-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+/* Контент карточки */
+.news-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.news-date {
+    color: var(--primary-light);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.news-date i {
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.news-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: var(--dark);
+    transition: color 0.3s ease;
+}
+
+.news-card:hover .news-title {
+    color: var(--primary);
+}
+
+.news-excerpt {
+    color: #6D6D6D;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Футер карточки */
+.news-footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #EEE;
+    padding-top: 18px;
+    margin-top: auto;
+}
+
+/* Кнопка "Подробнее" */
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.read-more-btn:hover {
+    background-color: var(--accent);
+    transform: translateX(5px);
+}
+
+.read-more-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Эффект наложения на изображение */
+.news-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 70%, rgba(58, 50, 38, 0.4));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.news-card:hover .news-image-container::after {
+    opacity: 1;
+}
+
+/* ====================== */
+/* Подвал сайта (Footer) */
+/* ====================== */
+.site-footer {
+    background-color: #F5DEB3;
+    padding: 50px 0 30px;
+    font-family: 'Arial', sans-serif;
+    color: #8B4513;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 80px;
+    border-top: 1px solid rgba(139, 69, 19, 0.1);
+}
+
+.footer-container {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Левая часть подвала */
+.footer-left {
+    flex: 2;
+    min-width: 300px;
+}
+
+.footer-logo img {
+    height: 60px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
+.footer-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #8B4513;
+    font-weight: 600;
+    position: relative;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #D2691E;
+}
+
+/* Блоки контактов */
+.footer-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contact-block {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.contact-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #8B4513;
+    font-weight: 600;
+}
+
+.contact-info {
+    margin: 8px 0;
+    color: #5A4A42;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Социальные иконки */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+/* Правая часть подвала (карта) */
+.footer-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 280px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
+}
+
+/* ====================== */
+/* Анимации */
+/* ====================== */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация появления карточек */
+.news-card {
+    animation: cardEntrance 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.news-card:nth-child(1) { animation-delay: 0.1s; }
+.news-card:nth-child(2) { animation-delay: 0.2s; }
+.news-card:nth-child(3) { animation-delay: 0.3s; }
+.news-card:nth-child(4) { animation-delay: 0.4s; }
+.news-card:nth-child(5) { animation-delay: 0.5s; }
+.news-card:nth-child(6) { animation-delay: 0.6s; }
+.news-card:nth-child(7) { animation-delay: 0.7s; }
+.news-card:nth-child(8) { animation-delay: 0.8s; }
+
+
+/* ====================== */
+/* Адаптивные стили */
+/* ====================== */
+
+/* ---------- 1200px и меньше ---------- */
+@media (max-width: 1200px) {
+    /* Баннер */
+    .banner-title {
+        font-size: 36px;
+    }
+    
+    /* Активация бургер-меню */
+    .burger-menu {
+        display: block;
+    }
+    
+    /* Адаптация навигации */
+    nav ul {
+        position: fixed;
+        top: 90px;
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: calc(100vh - 90px);
+        background-color: #FDF4E3;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        transition: right 0.5s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding-top: 30px;
+        overflow-y: auto;
+    }
+    
+    nav ul.active {
+        right: 0;
+    }
+    
+    /* Анимация бургер-меню */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+    
+    /* Новостные карточки */
+    .news-container {
+        gap: 30px;
+    }
+    
+    /* Подвал */
+    .footer-left, .footer-right {
+        flex: 100%;
+        text-align: center;
+    }
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+    }
+    .footer-right {
+        margin-top: 30px;
+    }
+    .footer-map iframe {
+        height: 350px;
+    }
+    .footer-contacts, .social-icons {
+        justify-content: center;
+    }
+}
+
+/* ---------- 992px и меньше ---------- */
+@media (max-width: 992px) {
+    /* Баннер */
+    .banner-title {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    .header-banner {
+        height: 250px;
+    }
+    
+    /* Новостные карточки */
+    .news-container {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+    
+    .news-image-container {
+        height: 220px;
+    }
+}
+
+/* ---------- 768px и меньше ---------- */
+@media (max-width: 768px) {
+    /* Баннер */
+    .banner-title {
+        font-size: 28px;
+    }
+    .header-banner {
+        height: 220px;
+        background-position: center 30%;
+    }
+    
+    /* Общие стили */
+    body {
+        padding: 40px 20px;
+    }
+    
+    /* Заголовки */
+    .footer-title, .section-title, .contact-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    /* Контакты */
+    .footer-contacts {
+        gap: 25px;
+    }
+    
+    /* Новостные карточки */
+    .news-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .news-content {
+        padding: 20px;
+    }
+    
+    .news-title {
+        font-size: 18px;
+    }
+    
+    .read-more-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* ---------- 576px и меньше ---------- */
+@media (max-width: 576px) {
+    /* Баннер */
+    .banner-title {
+        font-size: 24px;
+    }
+    .header-banner {
+        height: 200px;
+    }
+    
+    /* Подвал */
+    .footer-container {
+        width: 95%;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+    }
+    .footer-logo img {
+        height: 50px;
+        margin-bottom: 20px;
+    }
+    .footer-title, .section-title, .contact-title {
+        font-size: 28px;
+    }
+    .footer-contacts {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .contact-block {
+        min-width: 100%;
+    }
+    .footer-map iframe {
+        height: 250px;
+    }
+    
+    /* Логотип */
+    .logo img {
+        width: 50%;
+    }
+    
+    /* Новостные карточки */
+    .news-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    
+    .news-image-container {
+        height: 200px;
+    }
+}
+
+/* ---------- 400px и меньше ---------- */
+@media (max-width: 400px) {
+    /* Баннер */
+    .banner-title {
+        font-size: 20px;
+    }
+    .header-banner {
+        height: 180px;
+    }
+}
