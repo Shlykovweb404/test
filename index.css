@@ -131,7 +131,7 @@ nav ul li a:hover::after {
     display: block;
     width: 30px;
     height: 3px;
-    background-color: #8B4513;
+    background-color: #F5DEB3;
     margin: 5px 0;
     transition: all 0.3s ease;
 }
