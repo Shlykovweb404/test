@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дом мебели</title>
     <link rel="icon" href="img\favicon-96x96.png" type="image/png" sizes="120x120">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style/index.css">
+    <!-- Подключаем шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- ==================== HEADER SECTION ==================== -->
@@ -40,216 +42,213 @@
         <div class="hero-content">
             <p class="hero-subtitle">Эксклюзивная мебель на заказ</p>
             <h1 class="hero-title">Искусство в деталях</h1>
-            <p class="hero-text">Создаем уникальные интерьеры с 2008 года. Каждое изделие - это сочетание традиционного мастерства и современных технологий.</p>
+            <p class="hero-text">Изготовим мебель по индивидуальным размерам 
+                с учётом ваших пожеланий.</p>
             <a href="#contact" class="btn">Обсудить проект</a>
         </div>
     </section>
 
     <!-- ==================== ABOUT SECTION ==================== -->
-        <!-- О нас -->
-        <section class="about" id="about">
-            <div class="about-container">
-                <div class="about-image">
-                    <div class="about-img-frame"></div>
-                    <img src="img\О нас главная.png" alt="Наша мастерская" class="about-img">
-                </div>
-                <div class="about-content">
-                    <p class="section-subtitle">О компании</p>
-                    <h2 class="section-title">ДОМ МЕБЕЛИ</h2>
-                    <p class="about-text">Мы - команда мастеров, создающая эксклюзивную мебель премиум-класса. Наши изделия сочетают в себе безупречное качество, функциональность и неповторимый стиль.</p>
-                    <p class="about-text">Используем только лучшие материалы: массив ценных пород дерева, натуральную кожу, мрамор и бронзу. Каждое изделие проходит 7 этапов контроля качества.</p>
-                    <a href="#gallery" class="btn">Наши работы</a>
-                </div>
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <div class="about-img-frame"></div>
+                <img src="img\О нас главная.png" alt="Наша мастерская" class="about-img">
             </div>
-        </section>
-    
-        <!-- Преимущества -->
-        <section class="benefits">
-            <div class="benefits-container">
-                <p class="section-subtitle">Почему мы</p>
-                <h2 class="section-title">Наши преимущества</h2>
-                
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><i class="fas fa-medal"></i></div>
-                        <h3 class="benefit-title">Качество</h3>
-                        <p>Гарантия 10 лет на все изделия. Используем только проверенные материалы от европейских производителей.</p>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><i class="fas fa-ruler-combined"></i></div>
-                        <h3 class="benefit-title">Индивидуальность</h3>
-                        <p>Создаем мебель по вашим эскизам и размерам. Уникальный дизайн для каждого проекта.</p>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><i class="fas fa-user-tie"></i></div>
-                        <h3 class="benefit-title">Экспертиза</h3>
-                        <p>15 лет опыта в создании элитной мебели. Наши мастера - профессионалы с многолетним стажем.</p>
-                    </div>
-                </div>
+            <div class="about-content">
+                <p class="section-subtitle">О компании</p>
+                <h2 class="section-title">ДОМ МЕБЕЛИ</h2>
+                <p class="about-text">Мы - команда мастеров, создающая эксклюзивную мебель премиум-класса. Наши изделия сочетают в себе безупречное качество, функциональность и неповторимый стиль.</p>
+                <p class="about-text">Используем только лучшие материалы: массив ценных пород дерева, натуральную кожу, мрамор и бронзу. Каждое изделие проходит 7 этапов контроля качества.</p>
+                <a href="#gallery" class="btn">Наши работы</a>
             </div>
-        </section>
-    
-        <!-- Галерея -->
-        <section class="gallery" id="gallery">
-            <div class="gallery-container">
-                <p class="section-subtitle">Категории</p>
-                <h2 class="section-title">Каталог мебели</h2>
-                
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="img\Кухня.png" alt="Кухня" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Кухни</span>
-                            <h3 class="gallery-name">Милан</h3>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <img src="img\Шкаф.png" alt="Гостиная" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Шкафы</span>
-                            <h3 class="gallery-name">Лофт</h3>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <img src="img\Гардероб.png" alt="Спальня" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Гардеробные</span>
-                            <h3 class="gallery-name">Неоклассика</h3>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <img src="img\Прихожие.png" alt="Кабинет" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Прихожие</span>
-                            <h3 class="gallery-name">Престиж</h3>
-                        </div>
-                    </div>
+        </div>
+    </section>
 
-                    <div class="gallery-item">
-                        <img src="img\Ванные.png" alt="Кабинет" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Ванные</span>
-                            <h3 class="gallery-name">Престиж</h3>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="img\Детские.png" alt="Кабинет" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Детские</span>
-                            <h3 class="gallery-name">Престиж</h3>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="img\Спальни.png" alt="Кабинет" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Спальни</span>
-                            <h3 class="gallery-name">Престиж</h3>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="img\Гостинные.png" alt="Кабинет" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Гостиные</span>
-                            <h3 class="gallery-name">Престиж</h3>
-                        </div>
-                    </div>
-                </div>
-
-                
-            </div>
-        </section>
-
- <!-- СЕКЦИЯ КОНТАКТОВ -->
- <section class="contact-section" id="contact">
-    <div class="contact-decor decor-1"></div>
-    <div class="contact-decor decor-2"></div>
-    
-    <div class="contact-container">
-        <div class="contact-wrapper">
-            <div class="contact-form-wrap">
-                <p class="contact-subtitle">Свяжитесь с нами</p>
-                <h2 class="contact-title">Закажите бесплатный замер</h2>
-                <p class="contact-description">Оставьте заявку и наш дизайнер приедет к вам с каталогами и образцами материалов в удобное время</p>
-                
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Ваше имя</label>
-                        <input type="text" id="name" placeholder="Иван Иванов" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Телефон</label>
-                        <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="address">Адрес (если нужен замер)</label>
-                        <input type="text" id="address" placeholder="ул. Примерная, д. 1">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Комментарий</label>
-                        <textarea id="message" placeholder="Расскажите о вашем проекте"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Отправить заявку</button>
-                </form>
-            </div>
+    <!-- ==================== BENEFITS SECTION ==================== -->
+    <section class="benefits">
+        <div class="benefits-container">
+            <p class="section-subtitle">Почему мы</p>
+            <h2 class="section-title">Наши преимущества</h2>
             
-            <div class="contact-info-wrap">
-                <h3 class="info-title">Контакты</h3>
-                
-                <div class="contact-info-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div class="contact-info-content">
-                        <h3>Телефон</h3>
-                        <a href="tel:+79194456766">+7 (919) 445-67-66</a>
-                    </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-medal"></i></div>
+                    <h3 class="benefit-title">Качество</h3>
+                    <p>Гарантия 10 лет на все изделия. Используем только проверенные материалы от европейских производителей.</p>
                 </div>
                 
-                <div class="contact-info-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-info-content">
-                        <h3>Email</h3>
-                        <a href="mailto:komandor-style@mail.ru">komandor-style@mail.ru</a>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-ruler-combined"></i></div>
+                    <h3 class="benefit-title">Индивидуальность</h3>
+                    <p>Создаем мебель по вашим эскизам и размерам. Уникальный дизайн для каждого проекта.</p>
                 </div>
                 
-                <div class="contact-info-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-info-content">
-                        <h3>Адрес салона</h3>
-                        <p>ул. Маршала Рыбалко, 99, Пермь</p>
-                        <p>Ежедневно с 10:00 до 20:00</p>
-                    </div>
-                </div>
-                
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="benefit-title">Экспертиза</h3>
+                    <p>15 лет опыта в создании элитной мебели. Наши мастера - профессионалы с многолетним стажем.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- ==================== GALLERY SECTION ==================== -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-container">
+            <p class="section-subtitle">Категории</p>
+            <h2 class="section-title">Каталог мебели</h2>
+            
+            <div class="gallery-grid">
+                <a href="kitchens.html"><div class="gallery-item">
+                    <img src="img\Кухня.png" alt="Кухня" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Кухни</span>
+                        <h3 class="gallery-name">Милан</h3>
+                    </div>
+                </div></a>
+                
+                <a href="bathrooms.html"><div class="gallery-item">
+                    <img src="img\Шкаф.png" alt="Гостиная" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Шкафы</span>
+                        <h3 class="gallery-name">Лофт</h3>
+                    </div>
+                </div></a>
+                
+                <a href="Bedrooms.html"><div class="gallery-item">
+                    <img src="img\Гардероб.png" alt="Спальня" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Гардеробные</span>
+                        <h3 class="gallery-name">Неоклассика</h3>
+                    </div>
+                </div></a>
+                
+                <a href=""><div class="gallery-item">
+                    <img src="img\Прихожие.png" alt="Кабинет" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Прихожие</span>
+                        <h3 class="gallery-name">Престиж</h3>
+                    </div>
+                </div></a>
+
+                <a href=""><div class="gallery-item">
+                    <img src="img\Ванные.png" alt="Кабинет" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Ванные</span>
+                        <h3 class="gallery-name">Престиж</h3>
+                    </div>
+                </div></a>
+
+                <a href=""><div class="gallery-item">
+                    <img src="img\Детские.png" alt="Кабинет" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Детские</span>
+                        <h3 class="gallery-name">Престиж</h3>
+                    </div>
+                </div></a>
+
+                <a href=""><div class="gallery-item">
+                    <img src="img\Спальни.png" alt="Кабинет" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Спальни</span>
+                        <h3 class="gallery-name">Престиж</h3>
+                    </div>
+                </div></a>
+
+                <a href=""><div class="gallery-item">
+                    <img src="img\Гостинные.png" alt="Кабинет" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Гостиные</span>
+                        <h3 class="gallery-name">Престиж</h3>
+                    </div>
+                </div></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="contact-section" id="contact">
+        <div class="contact-decor decor-1"></div>
+        <div class="contact-decor decor-2"></div>
         
+        <div class="contact-container">
+            <div class="contact-wrapper">
+                <div class="contact-form-wrap">
+                    <p class="contact-subtitle">Свяжитесь с нами</p>
+                    <h2 class="contact-title">Закажите бесплатный замер</h2>
+                    <p class="contact-description">Оставьте заявку и наш дизайнер приедет к вам с каталогами и образцами материалов в удобное время</p>
+                    
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" placeholder="Иван Иванов" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Адрес (если нужен замер)</label>
+                            <input type="text" id="address" placeholder="ул. Примерная, д. 1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Комментарий</label>
+                            <textarea id="message" placeholder="Расскажите о вашем проекте"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Отправить заявку</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info-wrap">
+                    <h3 class="info-title">Контакты</h3>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h3>Телефон</h3>
+                            <a href="tel:+79194456766">+7 (919) 445-67-66</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h3>Email</h3>
+                            <a href="mailto:komandor-style@mail.ru">komandor-style@mail.ru</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h3>Адрес салона</h3>
+                            <p>ул. Маршала Рыбалко, 99, Пермь</p>
+                            <p>Ежедневно с 10:00 до 20:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- ==================== PORTFOLIO SECTION ==================== -->
     <section class="portfolio" id="portfolio">
         <div class="portfolio-container">
@@ -257,9 +256,8 @@
             <h2 class="section-title">Портфолио</h2>
             
             <div class="portfolio-grid">
-                <!-- Большой горизонтальный элемент -->
                 <div class="portfolio-item item-1">
-                    <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Современная кухня">
+                    <img src="img\кух.png" alt="Современная кухня">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Кухни</span>
                         <h3 class="portfolio-title">Миланский стиль</h3>
@@ -268,7 +266,6 @@
                     </div>
                 </div>
                 
-                <!-- Квадратные элементы -->
                 <div class="portfolio-item item-2">
                     <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Гостиная">
                     <div class="portfolio-overlay">
@@ -287,7 +284,6 @@
                     </div>
                 </div>
                 
-                <!-- Вертикальные элементы -->
                 <div class="portfolio-item item-4">
                     <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Кабинет">
                     <div class="portfolio-overlay">
@@ -306,7 +302,6 @@
                     </div>
                 </div>
                 
-                <!-- Горизонтальные элементы -->
                 <div class="portfolio-item item-6">
                     <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Детская">
                     <div class="portfolio-overlay">
@@ -337,30 +332,230 @@
         </div>
     </section>
     
+    <!-- ==================== REVIEWS SECTION ==================== -->
+    <section class="reviews-section" id="reviews">
+        <div class="reviews-container">
+            <p class="section-subtitle">Мнение клиентов</p>
+            <h2 class="section-title">Отзывы о нашей работе</h2>
+            
+            <div class="reviews-slider">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <div class="author-avatar">
+                                <img src="img/avatar1.jpg" alt="Анна К.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Анна К.</h4>
+                                <span class="review-date">15.05.2023</span>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>Заказывали кухню в Доме мебели. Остались очень довольны! Отдельная благодарность дизайнеру Елене за терпение и профессионализм - 5 раз переделывали проект под наши изменения. Качество материалов и сборки на высоте. Рекомендую!</p>
+                    </div>
+                    <div class="review-images">
+                        <img src="img/review-kitchen1.jpg" alt="Кухня Анны К.">
+                        <img src="img/review-kitchen2.jpg" alt="Кухня Анны К.">
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <div class="author-avatar">
+                                <img src="img/avatar2.jpg" alt="Сергей М.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Сергей М.</h4>
+                                <span class="review-date">22.06.2023</span>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            ★★★★☆
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>Делали гардеробную по индивидуальному проекту. Получилось даже лучше, чем ожидали! Небольшая задержка по срокам (на неделю), но нам заранее сообщили и компенсировали скидкой. Качество исполнения отличное, все продумано до мелочей.</p>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <div class="author-avatar">
+                                <img src="img/avatar3.jpg" alt="Ольга В.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Ольга В.</h4>
+                                <span class="review-date">03.09.2023</span>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>Это уже второй наш заказ в этой компании. Сначала делали кухню, теперь - мебель для гостиной. Оба раза работали с мастером Дмитрием - золотые руки! Все ровно, точно по размерам, никаких щелей. Цены адекватные за такое качество. Будем рекомендовать знакомым.</p>
+                    </div>
+                    <div class="review-images">
+                        <img src="img/review-livingroom.jpg" alt="Гостиная Ольги В.">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-nav">
+                <button class="slider-arrow prev-arrow">‹</button>
+                <div class="slider-dots"></div>
+                <button class="slider-arrow next-arrow">›</button>
+            </div>
+            
+            <div class="add-review-form">
+                <h3>Оставить свой отзыв</h3>
+                <form id="reviewForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reviewName">Ваше имя*</label>
+                            <input type="text" id="reviewName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewEmail">Email</label>
+                            <input type="email" id="reviewEmail">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewRating">Оценка</label>
+                        <div class="rating-stars">
+                            <span class="star" data-value="1">☆</span>
+                            <span class="star" data-value="2">☆</span>
+                            <span class="star" data-value="3">☆</span>
+                            <span class="star" data-value="4">☆</span>
+                            <span class="star" data-value="5">☆</span>
+                            <input type="hidden" id="reviewRating" value="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewText">Текст отзыва*</label>
+                        <textarea id="reviewText" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Фото (максимум 3)</label>
+                        <div class="file-upload">
+                            <input type="file" id="reviewPhotos" accept="image/*" multiple>
+                            <label for="reviewPhotos" class="upload-btn">Выбрать файлы</label>
+                            <span class="file-info">Файлы не выбраны</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn">Отправить отзыв</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ SECTION ==================== -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <p class="section-subtitle">Помощь</p>
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Как долго изготавливается мебель на заказ?</h3>
+                        <div class="faq-icon">
+                            <span class="plus">+</span>
+                            <span class="minus">−</span>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Срок изготовления зависит от сложности проекта и объема работ. В среднем, производство занимает от 14 до 60 дней. Точные сроки мы называем после замера и утверждения дизайн-проекта.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Какие материалы вы используете?</h3>
+                        <div class="faq-icon">
+                            <span class="plus">+</span>
+                            <span class="minus">−</span>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Мы работаем только с проверенными материалами премиум-класса: массив дуба, бука, ясеня; шпонированные МДФ; натуральный камень; качественные ЛДСП (Egger, Kronospan); итальянская фурнитура (Blum, Hettich).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Можно ли изменить дизайн мебели после утверждения проекта?</h3>
+                        <div class="faq-icon">
+                            <span class="plus">+</span>
+                            <span class="minus">−</span>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, но только на этапе проектирования. После запуска в производство внесение изменений возможно за дополнительную плату, так как требует переделки конструкторской документации.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Есть ли у вас гарантия на мебель?</h3>
+                        <div class="faq-icon">
+                            <span class="plus">+</span>
+                            <span class="minus">−</span>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Мы предоставляем гарантию 5 лет на корпусную мебель и 2 года на механизмы и фурнитуру. Гарантия распространяется на производственные дефекты при условии правильной эксплуатации.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Как происходит процесс заказа?</h3>
+                        <div class="faq-icon">
+                            <span class="plus">+</span>
+                            <span class="minus">−</span>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Процесс состоит из 5 этапов: 1) Консультация и выезд замерщика; 2) Разработка дизайн-проекта; 3) Утверждение проекта и подписание договора; 4) Изготовление мебели; 5) Доставка и монтаж.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-cta">
+                <p>Не нашли ответ на свой вопрос?</p>
+                <a href="#contact" class="btn">Задать вопрос</a>
+            </div>
+        </div>
+    </section>
 
     <!-- ==================== FOOTER SECTION ==================== -->
     <footer class="site-footer">
         <div class="footer-container">
-            <!-- Левая часть подвала -->
             <div class="footer-left">
-                <!-- Логотип -->
                 <div class="footer-logo">
                     <img src="img/Logo.png" alt="Логотип компании">
                 </div>
                 
-                <!-- Заголовок "Наши контакты" -->
                 <h3 class="footer-title">Наши контакты</h3>
                 
-                <!-- Контактная информация в ряд -->
                 <div class="footer-contacts">
-                    <!-- Блок "Связь" -->
                     <div class="contact-block">
                         <h4 class="contact-title">Связь</h4>
                         <p class="contact-info">Телефон: +7 (919)-445-67-66</p>
                         <p class="contact-info">E-mail: komandor-style@mail.ru</p>
                     </div>
                     
-                    <!-- Блок "Соц сети" -->
                     <div class="contact-block">
                         <h4 class="contact-title">Соц сети</h4>
                         <div class="social-icons">
@@ -373,7 +568,6 @@
                         </div>
                     </div>
                     
-                    <!-- Блок "Адрес" -->
                     <div class="contact-block">
                         <h4 class="contact-title">Адрес</h4>
                         <p class="contact-info">улица Маршала Рыбалко, 99, Пермь</p>
@@ -381,7 +575,6 @@
                 </div>
             </div>
             
-            <!-- Правая часть подвала (карта) -->
             <div class="footer-right">
                 <div class="footer-map">
                     <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A110509264a558d5ba3fa939ff04bd8a1d3058afc757c46e83564b32e9390c8b6&amp;source=constructor" frameborder="0"></iframe>
@@ -391,73 +584,71 @@
     </footer>
 
     <!-- ==================== SCRIPTS ==================== -->
-    <script src="main.js">
+    <script src="js\main.js">
+        
+// Слайдер каталога
+const catalogSlider = document.querySelector('.slider-wrapper');
+const catalogSlides = document.querySelectorAll('.catalog-slide');
+const prevBtn = document.querySelector('.slider-arrow.prev');
+const nextBtn = document.querySelector('.slider-arrow.next');
+let currentSlide = 0;
+const slideWidth = catalogSlides[0].offsetWidth;
 
-         // Слайдер каталога
-         const catalogSlider = document.querySelector('.slider-wrapper');
-        const catalogSlides = document.querySelectorAll('.catalog-slide');
-        const prevBtn = document.querySelector('.slider-arrow.prev');
-        const nextBtn = document.querySelector('.slider-arrow.next');
-        let currentSlide = 0;
-        const slideWidth = catalogSlides[0].offsetWidth;
-        
-        function updateSlider() {
-            catalogSlider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-        }
-        
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % catalogSlides.length;
-            updateSlider();
-        });
-        
-        prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + catalogSlides.length) % catalogSlides.length;
-            updateSlider();
-        });
-        
-        // FAQ аккордеон
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                item.classList.toggle('active');
-                
-                // Закрываем другие открытые вопросы
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item && otherItem.classList.contains('active')) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-            });
-        });
-        
-        // Анимации при скролле
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.catalog-card, .review-card, .faq-item');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-        
-        // Инициализация анимаций
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Инициализация состояния элементов
-        document.querySelectorAll('.catalog-card, .review-card, .faq-item').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'all 0.6s ease-out';
-        });
+function updateSlider() {
+   catalogSlider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
 
-        
+nextBtn.addEventListener('click', () => {
+   currentSlide = (currentSlide + 1) % catalogSlides.length;
+   updateSlider();
+});
+
+prevBtn.addEventListener('click', () => {
+   currentSlide = (currentSlide - 1 + catalogSlides.length) % catalogSlides.length;
+   updateSlider();
+});
+
+// FAQ аккордеон
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+   const question = item.querySelector('.faq-question');
+   question.addEventListener('click', () => {
+       item.classList.toggle('active');
+       
+       // Закрываем другие открытые вопросы
+       faqItems.forEach(otherItem => {
+           if (otherItem !== item && otherItem.classList.contains('active')) {
+               otherItem.classList.remove('active');
+           }
+       });
+   });
+});
+
+// Анимации при скролле
+const animateOnScroll = function() {
+   const elements = document.querySelectorAll('.catalog-card, .review-card, .faq-item');
+   
+   elements.forEach(element => {
+       const elementPosition = element.getBoundingClientRect().top;
+       const windowHeight = window.innerHeight;
+       
+       if (elementPosition < windowHeight - 100) {
+           element.style.opacity = '1';
+           element.style.transform = 'translateY(0)';
+       }
+   });
+};
+
+// Инициализация анимаций
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);
+
+// Инициализация состояния элементов
+document.querySelectorAll('.catalog-card, .review-card, .faq-item').forEach(element => {
+   element.style.opacity = '0';
+   element.style.transform = 'translateY(30px)';
+   element.style.transition = 'all 0.6s ease-out';
+});
     </script>
 </body>
 </html>
