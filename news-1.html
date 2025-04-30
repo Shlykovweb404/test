@@ -1,14 +1,455 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <!-- ==================== META & TITLE ==================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости</title>
+    <title>Кухня мечты для Татьяны в новостройке | Дом Мебели</title>
     
     <!-- ==================== FAVICON & CSS ==================== -->
     <link rel="icon" href="img/favicon-96x96.png" type="image/png" sizes="120x120">
-    <link rel="stylesheet" href="news-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ====================== */
+        /* Глобальные стили */
+        /* ====================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FDF4E3;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ====================== */
+        /* Шапка сайта */
+        /* ====================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background-color: #FDF4E3;
+            box-shadow: 0 2px 10px rgba(139, 69, 19, 0.1);
+            z-index: 1000;
+        }
+
+        .menu-container {
+            width: 90%;
+            max-width: 1920px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: transform 0.3s;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #8B4513;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #D2691E;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: #D2691E;
+        }
+
+        .burger-menu {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .burger-menu span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: #8B4513;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* ====================== */
+        /* Хлебные крошки */
+        /* ====================== */
+        .breadcrumbs {
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        .breadcrumbs a {
+            color: #8B6B4A;
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumbs span {
+            color: #B99B7B;
+        }
+
+        /* ====================== */
+        /* Детальная страница новости */
+        /* ====================== */
+        .news-detail {
+            padding: 40px 0 60px;
+        }
+
+        .news-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .news-badge {
+            display: inline-block;
+            background: #8B6B4A;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .news-date {
+            color: #B99B7B;
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .news-title {
+            font-size: 36px;
+            color: #3A3226;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .news-image-full {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 8px 30px rgba(58, 50, 38, 0.1);
+        }
+
+        .news-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .news-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .news-content h2 {
+            font-size: 24px;
+            color: #8B6B4A;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0d6c9;
+        }
+
+        .news-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .news-content li {
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #8B6B4A;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #D4A373;
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        /* ====================== */
+        /* Дополнительные материалы */
+        /* ====================== */
+        .related-news {
+            padding: 40px 0;
+            background-color: #F8F4EF;
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #3A3226;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .related-card-content {
+            padding: 20px;
+        }
+
+        .related-card-date {
+            color: #B99B7B;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .related-card-title {
+            font-size: 18px;
+            color: #3A3226;
+            margin-bottom: 15px;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #8B6B4A;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .read-more-btn:hover {
+            background-color: #D4A373;
+        }
+
+        /* ====================== */
+        /* Подвал */
+        /* ====================== */
+        footer {
+            background-color: #F5DEB3;
+            padding: 50px 0;
+            color: #8B4513;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .footer-left {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .footer-contacts {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            min-width: 300px;
+        }
+
+        .contact-block {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .contact-block h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contact-block p {
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ====================== */
+        /* Адаптивность */
+        /* ====================== */
+        @media (max-width: 992px) {
+            .news-title {
+                font-size: 30px;
+            }
+            
+            .news-image-full {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: #FDF4E3;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                gap: 30px;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            .burger-menu {
+                display: block;
+            }
+
+            .burger-menu.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .burger-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .burger-menu.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .news-title {
+                font-size: 26px;
+            }
+            
+            .news-image-full {
+                height: 300px;
+            }
+            
+            .footer-contacts {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .news-title {
+                font-size: 22px;
+            }
+            
+            .news-image-full {
+                height: 250px;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -27,6 +468,11 @@
                     <li><a href="contact.html">Контакты</a></li>
                 </ul>
             </nav>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
@@ -36,38 +482,48 @@
         <div class="breadcrumbs">
             <a href="index.html">Главная</a> / 
             <a href="news.html">Новости</a> / 
-            <span>Новая коллекция эко-мебели</span>
+            <span>Кухня мечты для Татьяны</span>
         </div>
 
         <!-- Детальная страница новости -->
         <article class="news-detail">
             <header class="news-header">
-                <span class="news-badge">Новинка</span>
-                <time class="news-date" datetime="2023-10-15"><i class="far fa-calendar-alt"></i> 15 октября 2023</time>
-                <h1 class="news-title">Представляем новую коллекцию эко-мебели</h1>
+                <span class="news-badge">Наш проект</span>
+                <time class="news-date" datetime="2023-11-20"><i class="far fa-calendar-alt"></i> 20 ноября 2023</time>
+                <h1 class="news-title">Кухня мечты для Татьяны в новостройке</h1>
             </header>
 
-            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                 alt="Новая коллекция эко-мебели" 
+            <img src="img\новость_1 (2).png" 
+                 alt="Кухня мечты для Татьяны" 
                  class="news-image-full">
 
             <div class="news-content">
-                <p>Мы рады представить нашу новую коллекцию мебели, созданную с заботой об окружающей среде. Каждое изделие изготовлено из переработанной древесины и экологически чистых материалов, что делает их не только стильными, но и безопасными для вашего дома.</p>
+                <p>Мы рады представить наш новый проект - кухню мечты для Татьяны, созданную в новостройке. Этот проект стал настоящим вызовом для нашей команды, так как нужно было учесть все пожелания хозяйки и особенности небольшого пространства.</p>
                 
-                <h2>Особенности коллекции</h2>
-                <p>Коллекция включает в себя широкий ассортимент предметов интерьера для гостиной, спальни и кухни. Все изделия отличаются:</p>
+                <h2>Особенности проекта</h2>
+                <p>Кухня была спроектирована с учетом следующих требований:</p>
                 <ul>
-                    <li>Использованием переработанной древесины высокого качества</li>
-                    <li>Натуральными отделочными материалами</li>
-                    <li>Эргономичным дизайном</li>
-                    <li>Прочностью и долговечностью</li>
-                    <li>Сертификатами экологической безопасности</li>
+                    <li>Максимальное использование каждого сантиметра пространства</li>
+                    <li>Современный дизайн в скандинавском стиле</li>
+                    <li>Функциональная рабочая зона</li>
+                    <li>Большое количество систем хранения</li>
+                    <li>Эргономичное расположение техники</li>
                 </ul>
 
-                <h2>Где посмотреть?</h2>
-                <p>Все предметы новой коллекции уже доступны в нашем шоу-руме по адресу: улица Маршала Рыбалко, 99, Пермь. Наши консультанты с радостью расскажут вам больше о каждой модели и помогут подобрать идеальное решение для вашего интерьера.</p>
+                <h2>Материалы и технологии</h2>
+                <p>Для создания этой кухни мы использовали:</p>
+                <ul>
+                    <li>Массив дуба для фасадов с матовым покрытием</li>
+                    <li>Столешницу из искусственного камня с защитой от царапин</li>
+                    <li>Встроенную технику премиум-класса</li>
+                    <li>Систему скрытого освещения</li>
+                    <li>Умные системы хранения (выдвижные корзины, угловые шкафы с каруселью)</li>
+                </ul>
 
-                <p>Для тех, кто ценит экологичность и стиль, эта коллекция станет отличным выбором. Мы гордимся тем, что создаем мебель, которая не только украшает дома, но и заботится о будущем нашей планеты.</p>
+                <h2>Отзыв клиента</h2>
+                <p>"Я мечтала о такой кухне! Команда 'Дома Мебели' учла все мои пожелания и создала не просто кухню, а настоящее произведение искусства. Теперь готовить - одно удовольствие!" - Татьяна, хозяйка кухни.</p>
+
+                <p>Этот проект стал для нас еще одним доказательством, что даже в небольшом пространстве можно создать функциональную и стильную кухню, которая будет радовать своих хозяев долгие годы.</p>
 
                 <a href="news.html" class="back-link"><i class="fas fa-arrow-left"></i> Вернуться к списку новостей</a>
             </div>
@@ -76,34 +532,34 @@
         <!-- Дополнительные материалы -->
         <section class="related-news">
             <div class="container">
-                <h2 class="section-title">Другие новости</h2>
+                <h2 class="section-title">Другие наши проекты</h2>
                 <div class="related-grid">
                     <!-- Новость 1 -->
                     <article class="related-card">
-                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Осенняя распродажа">
+                        <img src="img\image 133.png" alt="Гостиная в классическом стиле">
                         <div class="related-card-content">
-                            <time class="related-card-date">12 октября 2023</time>
-                            <h3 class="related-card-title">Осенняя распродажа - скидки до 40%</h3>
+                            <time class="related-card-date">15 ноября 2023</time>
+                            <h3 class="related-card-title">Новая ванная в новостройку</h3>
                             <a href="news-2.html" class="read-more-btn">Подробнее</a>
                         </div>
                     </article>
 
                     <!-- Новость 2 -->
                     <article class="related-card">
-                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Тренды в дизайне">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80" alt="Детская комната">
                         <div class="related-card-content">
-                            <time class="related-card-date">10 октября 2023</time>
-                            <h3 class="related-card-title">Тренды в мебельном дизайне 2024</h3>
+                            <time class="related-card-date">10 ноября 2023</time>
+                            <h3 class="related-card-title">Гостинная мечты</h3>
                             <a href="news-3.html" class="read-more-btn">Подробнее</a>
                         </div>
                     </article>
 
                     <!-- Новость 3 -->
                     <article class="related-card">
-                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Мастер-класс">
+                        <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Кабинет мечты">
                         <div class="related-card-content">
-                            <time class="related-card-date">8 октября 2023</time>
-                            <h3 class="related-card-title">Как выбрать идеальный диван</h3>
+                            <time class="related-card-date">5 ноября 2023</time>
+                            <h3 class="related-card-title">кухня на заказ</h3>
                             <a href="news-4.html" class="read-more-btn">Подробнее</a>
                         </div>
                     </article>
@@ -139,4 +595,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Бургер-меню
+        document.querySelector('.burger-menu').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Плавная прокрутка для ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
