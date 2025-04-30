@@ -8,7 +8,7 @@
     
     <!-- ==================== FAVICON & CSS ==================== -->
     <link rel="icon" href="img/favicon-96x96.png" type="image/png" sizes="120x120">
-    <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="style/news.css">
 </head>
 
 <body>
@@ -40,12 +40,28 @@
         </div>
     </header>
 
-    <!-- ==================== NEWS BANNER SECTION ==================== -->
-    <div class="header-banner">
+   <!-- ==================== NEWS BANNER SECTION ==================== -->
+<div class="news-banner">
+    <div class="banner-overlay">
         <div class="banner-content">
-            <h1 class="banner-title">Новости</h1>
+            <h1 class="banner-title">Новости и события</h1>
+            <p class="banner-subtitle">Реальные примеры мебели, созданной по индивидуальным заказам</p>
+            
+            <div class="banner-scroll-hint">
+                <span>Листайте вниз</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
         </div>
     </div>
+    
+    <!-- Декоративные элементы -->
+    <div class="banner-decoration">
+        <div class="decoration-circle"></div>
+        <div class="decoration-line"></div>
+    </div>
+</div>
 
     <!-- ==================== NEWS CARDS SECTION ==================== -->
     <div class="news-container">
@@ -53,12 +69,12 @@
         <div class="news-card">
             <div class="news-image-container">
                 <div class="news-badge">Новинка</div>
-                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Новая коллекция" class="news-image">
+                <img src="img\новость_1 (2).png" alt="Новая коллекция" class="news-image">
             </div>
             <div class="news-content">
-                <span class="news-date"><i class="far fa-calendar-alt"></i> 15 октября 2023</span>
-                <h3 class="news-title">Представляем новую коллекцию эко-мебели</h3>
-                <p class="news-excerpt">Уникальные предметы интерьера из переработанной древесины и экологичных материалов уже в нашем шоу-руме.</p>
+                <span class="news-date"><i class="far fa-calendar-alt"></i> 2 апреля 2025</span>
+                <h3 class="news-title">Кухня мечты для Татьяны в новостройке</h3>
+                <p class="news-excerpt">Кухня идеально вписалась в интерьер квартиры, создав гармоничное и удобное пространство. Татьяна осталась довольна качеством и скоростью работы. </p>
                 <div class="news-footer">
                     <a href="news-1.html" class="read-more-btn">Подробнее <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -68,13 +84,13 @@
         <!-- News Card 2 -->
         <div class="news-card">
             <div class="news-image-container">
-                <div class="news-badge">Акция</div>
-                <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Скидки" class="news-image">
+                <div class="news-badge">Новинка</div>
+                <img src="img\новость_2.png" alt="Скидки" class="news-image">
             </div>
             <div class="news-content">
-                <span class="news-date"><i class="far fa-calendar-alt"></i> 12 октября 2023</span>
-                <h3 class="news-title">Осенняя распродажа - скидки до 40%</h3>
-                <p class="news-excerpt">Только до конца месяца специальные предложения на диваны и кресла премиум-класса.</p>
+                <span class="news-date"><i class="far fa-calendar-alt"></i> 7 марта 2025</span>
+                <h3 class="news-title">Кухня для семьи Галины в ЖК Aqua (Кондратово)</h3>
+                <p class="news-excerpt">Кухня получилась стильной, удобной и идеально подошла под интерьер квартиры. Галина отметила, что теперь готовить стало намного приятнее, а вся семья собирается за большим столом. </p>
                 <div class="news-footer">
                     <a href="news-2.html" class="read-more-btn">Подробнее <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -84,13 +100,13 @@
         <!-- News Card 3 -->
         <div class="news-card">
             <div class="news-image-container">
-                <div class="news-badge">Дизайн</div>
-                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Тренды" class="news-image">
+                <div class="news-badge">Новинка</div>
+                <img src="img\новость_3.png" alt="Тренды" class="news-image">
             </div>
             <div class="news-content">
-                <span class="news-date"><i class="far fa-calendar-alt"></i> 10 октября 2023</span>
-                <h3 class="news-title">Тренды в мебельном дизайне 2024</h3>
-                <p class="news-excerpt">Какие материалы, цвета и формы будут актуальны в следующем году - мнение наших дизайнеров.</p>
+                <span class="news-date"><i class="far fa-calendar-alt"></i> 4 февраля 2025</span>
+                <h3 class="news-title">Шкаф-купе в детскую для Екатерины и её сыновей</h3>
+                <p class="news-excerpt">Шкаф получился не только красивым, но и суперфункциональным. Теперь у каждого из мальчиков есть своё место для вещей, а сама комната выглядит аккуратно и стильно...</p>
                 <div class="news-footer">
                     <a href="news-3.html" class="read-more-btn">Подробнее <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -100,13 +116,13 @@
         <!-- News Card 4 -->
         <div class="news-card">
             <div class="news-image-container">
-                <div class="news-badge">Мастер-класс</div>
-                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Мастер-класс" class="news-image">
+                <div class="news-badge">Новинка</div>
+                <img src="img\новость_4.png" alt="Мастер-класс" class="news-image">
             </div>
             <div class="news-content">
-                <span class="news-date"><i class="far fa-calendar-alt"></i> 8 октября 2023</span>
-                <h3 class="news-title">Как выбрать идеальный диван для гостиной</h3>
-                <p class="news-excerpt">Приглашаем на бесплатный мастер-класс от ведущего дизайнера нашей компании.</p>
+                <span class="news-date"><i class="far fa-calendar-alt"></i> 27 Декабря 2024</span>
+                <h3 class="news-title">Умная система хранения для спальни Сергея и Натальи</h3>
+                <p class="news-excerpt">Перед нами стояла непростая задача: создать вместительную систему хранения в небольшой спальне, где каждый сантиметр на счету. Сергей и Наталья хотели:...</p>
                 <div class="news-footer">
                     <a href="news-4.html" class="read-more-btn">Подробнее <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -116,13 +132,16 @@
         <!-- News Card 5 -->
         <div class="news-card">
             <div class="news-image-container">
-                <div class="news-badge">Производство</div>
-                <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Производство" class="news-image">
+                <div class="news-badge">Новинка</div>
+                <img src="img\новость_5.png" alt="Производство" class="news-image">
             </div>
             <div class="news-content">
-                <span class="news-date"><i class="far fa-calendar-alt"></i> 5 октября 2023</span>
-                <h3 class="news-title">Экскурсия на наше производство</h3>
-                <p class="news-excerpt">Как создается мебель премиум-класса - репортаж из цеха с полным циклом производства.</p>
+                <span class="news-date"><i class="far fa-calendar-alt"></i> 22 декабря 2024</span>
+                <h3 class="news-title">Элегантный шкаф в спальню для Дмитрия и Анастасии</h3>
+                <p class="news-excerpt">Семья хотела получить:<br>
+                    ✅ Стильный дизайн – классический белый цвет с благородной текстурой "Вельвет"<br>
+                    ✅ Надёжность – усиленные перегородки и качественная фурнитура<br>
+                    ✅ Функциональность – удобные полки и отделения для разных типов одежды...</p>
                 <div class="news-footer">
                     <a href="news-5.html" class="read-more-btn">Подробнее <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -132,13 +151,13 @@
         <!-- News Card 6 -->
         <div class="news-card">
             <div class="news-image-container">
-                <div class="news-badge">Коллаборация</div>
-                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80" alt="Коллаборация" class="news-image">
-            </div>
+                <div class="news-badge">Новинка</div>
+                <img src="img\новость 6.png" alt="Коллаборация" class="news-image">
+            </div> 
             <div class="news-content">
-                <span class="news-date"><i class="far fa-calendar-alt"></i> 3 октября 2023</span>
-                <h3 class="news-title">Совместная коллекция с известным дизайнером</h3>
-                <p class="news-excerpt">Эксклюзивные предметы интерьера, созданные в сотрудничестве с Олегом Кассини.</p>
+                <span class="news-date"><i class="far fa-calendar-alt"></i> 11 декабря 2024</span>
+                <h3 class="news-title">Стильная прихожая для Екатерины к Новому году</h3>
+                <p class="news-excerpt">В декабре Екатерина решила преобразить прихожую перед праздниками. Несмотря на загруженность в конце года, мы оперативно:...</p>
                 <div class="news-footer">
                     <a href="news-6.html" class="read-more-btn">Подробнее <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -148,13 +167,17 @@
         <!-- News Card 7 (Duplicate) -->
         <div class="news-card">
             <div class="news-image-container">
-                <div class="news-badge">Коллаборация</div>
-                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80" alt="Коллаборация" class="news-image">
+                <div class="news-badge">Новинка</div>
+                <img src="img\новость_7.png" alt="Коллаборация" class="news-image">
             </div>
             <div class="news-content">
-                <span class="news-date"><i class="far fa-calendar-alt"></i> 3 октября 2023</span>
-                <h3 class="news-title">Совместная коллекция с известным дизайнером</h3>
-                <p class="news-excerpt">Эксклюзивные предметы интерьера, созданные в сотрудничестве с Олегом Кассини.</p>
+                <span class="news-date"><i class="far fa-calendar-alt"></i> 19 января 2023</span>
+                <h3 class="news-title"> Функциональная прихожая для Елены и Антона</h3>
+                <p class="news-excerpt">Елена и Антон снова выбрали нас для обустройства своего дома. В этот раз мы создали для них:<br>
+                    ✔ Вместительный шкаф – для верхней одежды и аксессуаров<br>
+                    ✔ Удобную обувницу – с выдвижной системой хранения<br>
+                    ✔ Практичные ящики – для мелочей (ключи, перчатки, зонты)<br>
+                    ✔ Стильное зеркало – с эффектом визуального расширения пространства...</p>
                 <div class="news-footer">
                     <a href="news-6.html" class="read-more-btn">Подробнее <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -164,13 +187,15 @@
         <!-- News Card 8 (Duplicate) -->
         <div class="news-card">
             <div class="news-image-container">
-                <div class="news-badge">Коллаборация</div>
-                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80" alt="Коллаборация" class="news-image">
+                <div class="news-badge">Новинка</div>
+                <img src="img\новость_8.png" alt="Коллаборация" class="news-image">
             </div>
             <div class="news-content">
-                <span class="news-date"><i class="far fa-calendar-alt"></i> 3 октября 2023</span>
-                <h3 class="news-title">Совместная коллекция с известным дизайнером</h3>
-                <p class="news-excerpt">Эксклюзивные предметы интерьера, созданные в сотрудничестве с Олегом Кассини.</p>
+                <span class="news-date"><i class="far fa-calendar-alt"></i> 8 нября 2021</span>
+                <h3 class="news-title">Ваша мечта о стильной кухне – ближе, чем кажется </h3>
+                <p class="news-excerpt">ТОП-3 причины заказать кухню у нас:<br>
+                    Индивидуальный дизайн – создадим проект, в котором вам захочется проводить время<br>
+                    Умная эргономика – продумаем систему хранения до мелочей (никакого хаоса в шкафчиках!)... </p>
                 <div class="news-footer">
                     <a href="news-6.html" class="read-more-btn">Подробнее <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -231,6 +256,6 @@
     </footer>
 
     <!-- ==================== SCRIPTS ==================== -->
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
