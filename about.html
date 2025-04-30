@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О нас</title>
-    <link rel="icon" href="img\favicon-96x96.png" type="image/png" sizes="120x120">
-    <link rel="stylesheet" href="about.css">
+    <title>О нас - Дом Мебели</title>
+    <link rel="icon" href="img/favicon-96x96.png" type="image/png" sizes="120x120">
+    <link rel="stylesheet" href="style/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- ==================== HEADER SECTION ==================== -->
     <header>
         <div class="menu-container">
             <div class="logo">
@@ -31,47 +33,83 @@
             </div>
         </div>
     </header>
-    <!-- Герой-секция -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Дом Мебели - создаем уют с 2005 года</h1>
-                <p>Производим качественную мебель на заказ с индивидуальным подходом к каждому клиенту</p>
-                <a href="#contact" class="btn">Связаться с нами</a>
+
+    <!-- ==================== ABOUT BANNER SECTION ==================== -->
+    <div class="about-banner">
+        <div class="banner-overlay">
+            <div class="banner-content">
+                <h1 class="banner-title">Дом Мебели - создаем уют </h1>
+                <p class="banner-subtitle">Производим качественную мебель на заказ с индивидуальным подходом к каждому клиенту</p>
+                
+                <div class="banner-scroll-hint">
+                    <span>Листайте вниз</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
             </div>
         </div>
-    </section>
+        
+        <div class="banner-decoration">
+            <div class="decoration-circle"></div>
+            <div class="decoration-line"></div>
+        </div>
+    </div>
 
-    <!-- О компании -->
-    <section id="about" class="section about-company">
+    <!-- ==================== ABOUT COMPANY SECTION ==================== -->
+    <section class="about-company">
         <div class="container">
             <h2 class="section-title">О нашей компании</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>18 лет создаем мебель для вашего комфорта</h2>
-                    <p>Компания "Дом Мебели" была основана в 2005 году с целью создания качественной, красивой и функциональной мебели для наших клиентов. Начиная с небольшой мастерской, мы выросли в современное производство с полным циклом.</p>
-                    <p>Наша философия - это гармоничное сочетание традиционных столярных техник и современных технологий. Мы используем только проверенные материалы от ведущих поставщиков, что гарантирует долговечность нашей продукции.</p>
-                    <p>Каждое изделие проходит многоступенчатый контроль качества, чтобы вы получили мебель, которая будет служить вам долгие годы.</p>
+            
+            <div class="company-content">
+                <div class="company-text">
+                    <h3>Создаем мебель для вашего комфорта</h3>
+                    <p>Мы - команда мастеров, создающая эксклюзивную мебель премиум-класса. Наши изделия сочетают в себе безупречное качество, функциональность и неповторимый стиль.
+
+                        Используем только лучшие материалы: массив ценных пород дерева, натуральную кожу, мрамор и бронзу. Каждое изделие проходит 7 этапов контроля качества.</p>
+                    
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">18+</div>
+                            <div class="stat-label">лет опыта</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2500+</div>
+                            <div class="stat-label">довольных клиентов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">профессионалов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">этапов контроля</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-image">
+                
+                <div class="company-image">
                     <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Наше производство">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Наши преимущества -->
-    <section class="section advantages">
+    <!-- ==================== ADVANTAGES SECTION ==================== -->
+    <section class="advantages-section">
         <div class="container">
             <h2 class="section-title">Почему выбирают нас</h2>
+            
             <div class="advantages-grid">
                 <div class="advantage-card">
                     <div class="advantage-icon">
                         <i class="fas fa-medal"></i>
                     </div>
                     <h3>Качество материалов</h3>
-                    <p>Используем только проверенные материалы от ведущих поставщиков с сертификатами качества</p>
+                    <p>Мебель, которой можно доверять. Ощутите разницу - плотность соединений, безупречная геометрия и благородная фактура натуральных материалов.</p>
                 </div>
+                
                 <div class="advantage-card">
                     <div class="advantage-icon">
                         <i class="fas fa-ruler-combined"></i>
@@ -79,6 +117,7 @@
                     <h3>Индивидуальный подход</h3>
                     <p>Создаем мебель по вашим размерам и пожеланиям с учетом особенностей помещения</p>
                 </div>
+                
                 <div class="advantage-card">
                     <div class="advantage-icon">
                         <i class="fas fa-user-tie"></i>
@@ -86,13 +125,15 @@
                     <h3>Опытные мастера</h3>
                     <p>Над вашей мебелью работают профессионалы с 10+ летним опытом в мебельном производстве</p>
                 </div>
+                
                 <div class="advantage-card">
                     <div class="advantage-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Гарантия 5 лет</h3>
-                    <p>Даем расширенную гарантию на всю нашу продукцию и предоставляем сервисное обслуживание</p>
+                    <h3>Дизайн</h3>
+                    <p>Любые нестандартные решения. Дизайн - от всегда актуальной классики до креативного хай-тека.</p>
                 </div>
+                
                 <div class="advantage-card">
                     <div class="advantage-icon">
                         <i class="fas fa-leaf"></i>
@@ -100,6 +141,7 @@
                     <h3>Экологичность</h3>
                     <p>Используем безопасные материалы и лаки для здоровья вашей семьи</p>
                 </div>
+                
                 <div class="advantage-card">
                     <div class="advantage-icon">
                         <i class="fas fa-stopwatch"></i>
@@ -111,111 +153,71 @@
         </div>
     </section>
 
-    <!-- Наша команда -->
-    <section class="section team">
-        <div class="container">
-            <h2 class="section-title">Наша команда</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Алексей Петров">
-                    </div>
-                    <h3>Алексей Петров</h3>
-                    <p>Основатель компании</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Елена Смирнова">
-                    </div>
-                    <h3>Елена Смирнова</h3>
-                    <p>Главный дизайнер</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Дмитрий Иванов">
-                    </div>
-                    <h3>Дмитрий Иванов</h3>
-                    <p>Технический директор</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Ольга Кузнецова">
-                    </div>
-                    <h3>Ольга Кузнецова</h3>
-                    <p>Менеджер по работе с клиентами</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Наше производство -->
-    <section class="section production">
+    <!-- ==================== PRODUCTION SECTION ==================== -->
+    <section class="production-section">
         <div class="container">
             <h2 class="section-title">Наше производство</h2>
+            
             <div class="production-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Наше производство">
+                <div class="production-image">
+                    <img src="img\image 61.png" alt="Наше производство">
                 </div>
-                <div class="about-text">
-                    <h2>Современные технологии и ручная работа</h2>
-                    <p>Наше производство площадью 2500 м² оснащено современным оборудованием из Германии и Италии. Мы сочетаем высокоточные станки с ЧПУ и ручную работу мастеров, что позволяет создавать мебель высочайшего качества.</p>
-                    <p>Весь процесс производства проходит в несколько этапов: от проектирования и раскроя материалов до сборки и финального контроля качества. Каждое изделие проходит 12 проверок на разных этапах производства.</p>
+                
+                <div class="production-text">
+                    <h3>Современные технологии и ручная работа</h3>
+                    <p>В "Доме Мебели" мы создаем мебель на заказ, сочетая современные технологии и ручное мастерство. Наше производство – это:</p>
                     
-                    <div class="production-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">18+</div>
-                            <p>лет на рынке</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Высокоточное оборудование</span>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">2500+</div>
-                            <p>довольных клиентов</p>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span> Эксклюзивные материалы – отборная древесина, экошпон, металл и premium-фурнитура.</span>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <p>сотрудников</p>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ручная доводка – опытные мастера завершают каждую деталь, придавая мебели безупречный вид.</span>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">12</div>
-                            <p>этапов контроля</p>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Индивидуальный подход к каждому заказу</span>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Призыв к действию -->
-    <section id="contact" class="section cta">
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="cta-section">
         <div class="container">
             <h2 class="section-title">Готовы создать мебель вашей мечты?</h2>
-            <p>Оставьте заявку, и наш менеджер свяжется с вами для бесплатной консультации и расчета стоимости</p>
-            <a href="contact.html" class="btn">Оставить заявку</a>
+            <p>Свяжитесь с нами для создания вашей идеальной мебели</p>
+            <a href="contact.html" class="cta-btn">Написать</a>
         </div>
     </section>
 
     <!-- ==================== FOOTER SECTION ==================== -->
     <footer class="site-footer">
         <div class="footer-container">
-            <!-- Левая часть подвала -->
             <div class="footer-left">
-                <!-- Логотип -->
                 <div class="footer-logo">
                     <img src="img/Logo.png" alt="Логотип компании">
                 </div>
                 
-                <!-- Заголовок "Наши контакты" -->
                 <h3 class="footer-title">Наши контакты</h3>
                 
-                <!-- Контактная информация в ряд -->
                 <div class="footer-contacts">
-                    <!-- Блок "Связь" -->
                     <div class="contact-block">
                         <h4 class="contact-title">Связь</h4>
                         <p class="contact-info">Телефон: +7 (919)-445-67-66</p>
                         <p class="contact-info">E-mail: komandor-style@mail.ru</p>
                     </div>
                     
-                    <!-- Блок "Соц сети" -->
                     <div class="contact-block">
                         <h4 class="contact-title">Соц сети</h4>
                         <div class="social-icons">
@@ -228,7 +230,6 @@
                         </div>
                     </div>
                     
-                    <!-- Блок "Адрес" -->
                     <div class="contact-block">
                         <h4 class="contact-title">Адрес</h4>
                         <p class="contact-info">улица Маршала Рыбалко, 99, Пермь</p>
@@ -236,7 +237,6 @@
                 </div>
             </div>
             
-            <!-- Правая часть подвала (карта) -->
             <div class="footer-right">
                 <div class="footer-map">
                     <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A110509264a558d5ba3fa939ff04bd8a1d3058afc757c46e83564b32e9390c8b6&amp;source=constructor" frameborder="0"></iframe>
@@ -245,8 +245,6 @@
         </div>
     </footer>
 
-<script src="main.js"></script>
-
-    
+    <script src="js/main.js"></script>
 </body>
 </html>
