@@ -1,6 +1,6 @@
-/* ====================== */
-/* Глобальные стили */
-/* ====================== */
+/* ==================== */
+/* ГЛОБАЛЬНЫЕ СТИЛИ */
+/* ==================== */
 * {
     margin: 0;
     padding: 0;
@@ -9,34 +9,37 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px; /* Отступ при скролле к якорям */
+    scroll-padding-top: 100px;
 }
 
 body {
     min-height: 100vh;
-    background-color: #FDF4E3; /* Основной цвет фона */
-    font-family: 'Arial', sans-serif;
+    background-color: #FDF4E3;
+    font-family: 'Lato', sans-serif;
     letter-spacing: 2px;
-    padding-top: 100px; /* Компенсация фиксированного хедера */
+    padding-top: 100px;
+    color: #5A4A42;
 }
 
-/* Скрытие стандартного скроллбара */
 body::-webkit-scrollbar {
     display: none;
 }
 
-/* Цветовые переменные */
+/* ==================== */
+/* ЦВЕТОВАЯ ПАЛИТРА */
+/* ==================== */
 :root {
-    --primary: #8B6B4A;       /* Основной коричневый */
-    --primary-light: #B99B7B; /* Светлый коричневый */
-    --dark: #3A3226;         /* Темный цвет текста */
-    --light: #F8F4EF;       /* Светлый фон */
-    --accent: #D4A373;      /* Акцентный цвет */
+    --primary: #8B4513;     /* Основной коричневый */
+    --primary-light: #D2691E; /* Светлый коричневый */
+    --accent: #D4AF37;      /* Золотой акцент */
+    --light: #FDF4E3;       /* Светлый крем */
+    --light-beige: #F5DEB3; /* Светлый бежевый */
+    --white: #FFFFFF;       /* Чистый белый */
 }
 
-/* ====================== */
-/* Шапка сайта (Header) */
-/* ====================== */
+/* ==================== */
+/* ШАПКА САЙТА */
+/* ==================== */
 header {
     position: fixed;
     top: 0;
@@ -44,11 +47,11 @@ header {
     width: 100%;
     padding: 15px 0;
     z-index: 1000;
-    background-color: #FDF4E3;
+    background-color: var(--light);
     box-shadow: 0 2px 10px rgba(139, 69, 19, 0.1);
+    transition: all 0.3s ease;
 }
 
-/* Контейнер меню */
 .menu-container {
     width: 90%;
     max-width: 1920px;
@@ -58,7 +61,6 @@ header {
     align-items: center;
 }
 
-/* Логотип */
 .logo {
     height: 60px;
     display: flex;
@@ -73,7 +75,6 @@ header {
     object-fit: contain;
 }
 
-/* Основная навигация */
 nav ul {
     display: flex;
     list-style: none;
@@ -84,7 +85,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #8B4513;
+    color: var(--primary);
     font-weight: 600;
     font-size: 18px;
     transition: all 0.3s;
@@ -93,9 +94,8 @@ nav ul li a {
     position: relative;
 }
 
-/* Эффекты при наведении на пункты меню */
 nav ul li a:hover {
-    color: #D2691E;
+    color: var(--primary-light);
     background-color: rgba(210, 105, 30, 0.1);
 }
 
@@ -106,7 +106,7 @@ nav ul li a::after {
     height: 2px;
     bottom: 0;
     left: 50%;
-    background-color: #D2691E;
+    background-color: var(--primary-light);
     transition: all 0.3s;
     transform: translateX(-50%);
 }
@@ -115,7 +115,6 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Бургер-меню (скрыто на десктопе) */
 .burger-menu {
     display: none;
     cursor: pointer;
@@ -126,70 +125,125 @@ nav ul li a:hover::after {
     display: block;
     width: 30px;
     height: 3px;
-    background-color: #8B4513;
+    background-color: var(--primary);
     margin: 5px 0;
     transition: all 0.3s ease;
 }
 
-/* ====================== */
-/* Баннер новостей */
-/* ====================== */
-.header-banner {
+/* ==================== */
+/* БАННЕР НОВОСТЕЙ */
+/* ==================== */
+.news-banner {
     position: relative;
     width: 100%;
-    height: 351px;
+    height: 500px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     overflow: hidden;
-    background: #000 url('img/Новости.png') no-repeat center center;
-    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    margin-top: -10px;
 }
 
-/* Затемнение фона баннера */
-.header-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-/* Контент баннера */
-.banner-content {
+.banner-overlay {
     position: relative;
     z-index: 2;
-    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.banner-content {
+    text-align: center;
+    color: var(--white);
+    max-width: 800px;
     padding: 0 20px;
-    max-width: 1200px;
+    animation: fadeInUp 1s ease-out;
 }
 
 .banner-title {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     line-height: 1.2;
 }
 
-/* ====================== */
-/* Секция новостных карточек */
-/* ====================== */
+.banner-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    animation: bounce 2s infinite;
+}
+
+.banner-scroll-hint svg {
+    margin-top: 8px;
+}
+
+.banner-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.decoration-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    right: -200px;
+    top: -200px;
+}
+
+.decoration-line {
+    position: absolute;
+    width: 120%;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.05);
+    bottom: -50px;
+    left: -10%;
+    transform: rotate(-5deg);
+}
+
+/* ==================== */
+/* КАРТОЧКИ НОВОСТЕЙ */
+/* ==================== */
 .news-container {
     max-width: 1800px;
-    margin: 0 auto;
+    margin: 80px auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: 40px;
-    margin-top: 5%;
+    padding: 0 20px;
 }
 
-/* Карточка новости */
 .news-card {
-    background: white;
+    background: var(--white);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(58, 50, 38, 0.08);
@@ -198,15 +252,14 @@ nav ul li a:hover::after {
     display: flex;
     flex-direction: column;
     height: 100%;
+    border: 1px solid rgba(139, 69, 19, 0.1);
 }
 
-/* Эффекты при наведении на карточку */
 .news-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(58, 50, 38, 0.15);
+    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.15);
 }
 
-/* Контейнер изображения новости */
 .news-image-container {
     height: 240px;
     overflow: hidden;
@@ -224,13 +277,12 @@ nav ul li a:hover::after {
     transform: scale(1.08);
 }
 
-/* Бейдж новости */
 .news-badge {
     position: absolute;
     top: 20px;
     left: 20px;
-    background: var(--primary);
-    color: white;
+    background: var(--primary-light);
+    color: var(--white);
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 12px;
@@ -240,7 +292,6 @@ nav ul li a:hover::after {
     z-index: 2;
 }
 
-/* Контент карточки */
 .news-content {
     padding: 25px;
     display: flex;
@@ -267,12 +318,12 @@ nav ul li a:hover::after {
     font-weight: 600;
     margin-bottom: 15px;
     line-height: 1.4;
-    color: var(--dark);
+    color: var(--primary);
     transition: color 0.3s ease;
 }
 
 .news-card:hover .news-title {
-    color: var(--primary);
+    color: var(--primary-light);
 }
 
 .news-excerpt {
@@ -283,7 +334,6 @@ nav ul li a:hover::after {
     flex-grow: 1;
 }
 
-/* Футер карточки */
 .news-footer {
     display: flex;
     justify-content: flex-end;
@@ -292,13 +342,12 @@ nav ul li a:hover::after {
     margin-top: auto;
 }
 
-/* Кнопка "Подробнее" */
 .read-more-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: var(--primary);
-    color: white;
+    color: var(--white);
     padding: 10px 20px;
     border-radius: 30px;
     font-weight: 600;
@@ -310,7 +359,7 @@ nav ul li a:hover::after {
 }
 
 .read-more-btn:hover {
-    background-color: var(--accent);
+    background-color: var(--primary-light);
     transform: translateX(5px);
 }
 
@@ -323,7 +372,6 @@ nav ul li a:hover::after {
     transform: translateX(3px);
 }
 
-/* Эффект наложения на изображение */
 .news-image-container::after {
     content: '';
     position: absolute;
@@ -340,14 +388,13 @@ nav ul li a:hover::after {
     opacity: 1;
 }
 
-/* ====================== */
-/* Подвал сайта (Footer) */
-/* ====================== */
+/* ==================== */
+/* ПОДВАЛ САЙТА */
+/* ==================== */
 .site-footer {
-    background-color: #F5DEB3;
+    background-color: var(--light-beige);
     padding: 50px 0 30px;
-    font-family: 'Arial', sans-serif;
-    color: #8B4513;
+    color: var(--primary);
     width: 100%;
     box-sizing: border-box;
     margin-top: 80px;
@@ -363,7 +410,6 @@ nav ul li a:hover::after {
     gap: 40px;
 }
 
-/* Левая часть подвала */
 .footer-left {
     flex: 2;
     min-width: 300px;
@@ -376,9 +422,9 @@ nav ul li a:hover::after {
 }
 
 .footer-title {
-    font-size: 28px;
+    font-size: 1.8rem;
     margin-bottom: 25px;
-    color: #8B4513;
+    color: var(--primary);
     font-weight: 600;
     position: relative;
 }
@@ -388,16 +434,15 @@ nav ul li a:hover::after {
     position: absolute;
     bottom: -8px;
     left: 0;
-    width: 100%;
+    width: 80px;
     height: 2px;
-    background-color: #D2691E;
+    background-color: var(--accent);
 }
 
-/* Блоки контактов */
 .footer-contacts {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
     margin-top: 30px;
 }
 
@@ -408,20 +453,19 @@ nav ul li a:hover::after {
 }
 
 .contact-title {
-    font-size: 18px;
+    font-size: 1.1rem;
     margin-bottom: 15px;
-    color: #8B4513;
+    color: var(--accent);
     font-weight: 600;
 }
 
 .contact-info {
     margin: 8px 0;
-    color: #5A4A42;
-    font-size: 16px;
+    color: var(--primary);
+    font-size: 0.9rem;
     line-height: 1.5;
 }
 
-/* Социальные иконки */
 .social-icons {
     display: flex;
     gap: 15px;
@@ -438,7 +482,6 @@ nav ul li a:hover::after {
     transform: scale(1.1);
 }
 
-/* Правая часть подвала (карта) */
 .footer-right {
     flex: 1;
     min-width: 300px;
@@ -452,9 +495,32 @@ nav ul li a:hover::after {
     border: none;
 }
 
-/* ====================== */
-/* Анимации */
-/* ====================== */
+/* ==================== */
+/* АНИМАЦИИ */
+/* ==================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-15px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-7px) translateX(-50%);
+    }
+}
+
 @keyframes cardEntrance {
     from {
         opacity: 0;
@@ -466,7 +532,6 @@ nav ul li a:hover::after {
     }
 }
 
-/* Анимация появления карточек */
 .news-card {
     animation: cardEntrance 0.6s ease-out forwards;
     opacity: 0;
@@ -481,24 +546,18 @@ nav ul li a:hover::after {
 .news-card:nth-child(7) { animation-delay: 0.7s; }
 .news-card:nth-child(8) { animation-delay: 0.8s; }
 
-
-/* ====================== */
-/* Адаптивные стили */
-/* ====================== */
-
-/* ---------- 1200px и меньше ---------- */
+/* ==================== */
+/* АДАПТИВНЫЕ СТИЛИ */
+/* ==================== */
 @media (max-width: 1200px) {
-    /* Баннер */
     .banner-title {
         font-size: 36px;
     }
     
-    /* Активация бургер-меню */
     .burger-menu {
         display: block;
     }
     
-    /* Адаптация навигации */
     nav ul {
         position: fixed;
         top: 90px;
@@ -506,7 +565,7 @@ nav ul li a:hover::after {
         width: 100%;
         max-width: 300px;
         height: calc(100vh - 90px);
-        background-color: #FDF4E3;
+        background-color: var(--light);
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
@@ -521,7 +580,6 @@ nav ul li a:hover::after {
         right: 0;
     }
     
-    /* Анимация бургер-меню */
     .burger-menu.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
     }
@@ -534,44 +592,40 @@ nav ul li a:hover::after {
         transform: rotate(-45deg) translate(5px, -6px);
     }
     
-    /* Новостные карточки */
     .news-container {
         gap: 30px;
     }
     
-    /* Подвал */
     .footer-left, .footer-right {
         flex: 100%;
         text-align: center;
     }
+    
     .footer-title::after {
         left: 50%;
         transform: translateX(-50%);
         width: 80px;
     }
+    
     .footer-right {
         margin-top: 30px;
     }
+    
     .footer-map iframe {
         height: 350px;
     }
+    
     .footer-contacts, .social-icons {
         justify-content: center;
     }
 }
 
-/* ---------- 992px и меньше ---------- */
 @media (max-width: 992px) {
-    /* Баннер */
     .banner-title {
         font-size: 32px;
         margin-bottom: 15px;
     }
-    .header-banner {
-        height: 250px;
-    }
     
-    /* Новостные карточки */
     .news-container {
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     }
@@ -581,34 +635,24 @@ nav ul li a:hover::after {
     }
 }
 
-/* ---------- 768px и меньше ---------- */
 @media (max-width: 768px) {
-    /* Баннер */
     .banner-title {
         font-size: 28px;
     }
-    .header-banner {
-        height: 220px;
-        background-position: center 30%;
-    }
     
-    /* Общие стили */
     body {
         padding: 40px 20px;
     }
     
-    /* Заголовки */
     .footer-title, .section-title, .contact-title {
         font-size: 32px;
         margin-bottom: 40px;
     }
     
-    /* Контакты */
     .footer-contacts {
         gap: 25px;
     }
     
-    /* Новостные карточки */
     .news-container {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 25px;
@@ -628,51 +672,49 @@ nav ul li a:hover::after {
     }
 }
 
-/* ---------- 576px и меньше ---------- */
 @media (max-width: 576px) {
-    /* Баннер */
     .banner-title {
         font-size: 24px;
     }
-    .header-banner {
-        height: 200px;
-    }
     
-    /* Подвал */
     .footer-container {
         width: 95%;
         gap: 20px;
         text-align: center;
     }
+    
     .footer-logo {
         display: flex;
         justify-content: center;
     }
+    
     .footer-logo img {
         height: 50px;
         margin-bottom: 20px;
     }
+    
     .footer-title, .section-title, .contact-title {
         font-size: 28px;
     }
+    
     .footer-contacts {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
+    
     .contact-block {
         min-width: 100%;
     }
+    
     .footer-map iframe {
         height: 250px;
     }
     
-    /* Логотип */
     .logo img {
         width: 50%;
     }
     
-    /* Новостные карточки */
     .news-container {
         grid-template-columns: 1fr;
         max-width: 500px;
@@ -683,13 +725,8 @@ nav ul li a:hover::after {
     }
 }
 
-/* ---------- 400px и меньше ---------- */
 @media (max-width: 400px) {
-    /* Баннер */
     .banner-title {
         font-size: 20px;
-    }
-    .header-banner {
-        height: 180px;
     }
 }
